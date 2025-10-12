@@ -1,13 +1,413 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UstazTilek Teacher Support Platform</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UstazTilek - Teacher Support & Mentorship Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <span class="logo-text">UstazTilek</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#problem" class="nav-link" data-en="Problem" data-kk="Мәселе" data-ru="Проблема">Problem</a></li>
+                    <li><a href="#solution" class="nav-link" data-en="Solution" data-kk="Шешім" data-ru="Решение">Solution</a></li>
+                    <li><a href="#global" class="nav-link" data-en="Inspiration" data-kk="Шетелдік тәжірибе" data-ru="Глобальный опыт">Inspiration</a></li>
+                    <li><a href="#testimonials" class="nav-link" data-en="Testimonials" data-kk="Пікірлер" data-ru="Отзывы">Testimonials</a></li>
+                    <li><a href="#commercialization" class="nav-link" data-en="Sustainability" data-kk="Тұрақтылық" data-ru="Устойчивость">Sustainability</a></li>
+                    <li><a href="#join" class="nav-link" data-en="Join" data-kk="Қосылу" data-ru="Присоединиться">Join</a></li>
+                    <li><a href="#about" class="nav-link" data-en="About" data-kk="Біз туралы" data-ru="О нас">About</a></li>
+                </ul>
+            </nav>
+            <div class="language-toggle">
+                <button class="lang-btn active" data-lang="en">English</button>
+                <button class="lang-btn" data-lang="kk">Қазақша</button>
+                <button class="lang-btn" data-lang="ru">Русский</button>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title" data-en="Every teacher deserves support." data-kk="Әрбір мұғалім қолдауға лайық." data-ru="Каждый учитель заслуживает поддержки.">Every teacher deserves support.</h1>
+                <p class="hero-subtitle" data-en="A community for psychological help, mentorship, and collaboration among educators." data-kk="Мұғалімдерге арналған психологиялық көмек, тәлімгерлік және ынтымақтастық қауымдастығы." data-ru="Сообщество для психологической помощи, наставничества и сотрудничества среди педагогов.">A community for psychological help, mentorship, and collaboration among educators.</p>
+                <div class="hero-buttons">
+                    <a href="#join" class="btn btn-primary" data-en="Get Support" data-kk="Қолдау алу" data-ru="Получить поддержку">Get Support</a>
+                    <a href="#join" class="btn btn-secondary" data-en="Join as Mentor" data-kk="Тәлімгер ретінде қосылу" data-ru="Стать наставником">Join as Mentor</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Teachers collaborating">
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="problem">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-en="The Challenge Facing Teachers" data-kk="Мұғалімдердің алдында тұрған мәселелер" data-ru="Проблемы, с которыми сталкиваются учителя">The Challenge Facing Teachers</h2>
+                <p data-en="Educators in Kazakhstan face unique pressures that impact their wellbeing and effectiveness in the classroom." data-kk="Қазақстандағы мұғалімдер олардың саулығына және сыныптағы тиімділігіне әсер ететін ерекше қысымға тап болады." data-ru="Педагоги в Казахстане сталкиваются с уникальным давлением, которое влияет на их благополучие и эффективность в классе.">Educators in Kazakhstan face unique pressures that impact their wellbeing and effectiveness in the classroom.</p>
+            </div>
+            <div class="stats-container">
+                <div class="stat-card card">
+                    <div class="stat-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="stat-number">60%</div>
+                    <div class="stat-text" data-en="of teachers report high levels of stress and burnout" data-kk="мұғалімдер жоғары деңгейдегі стрессті және күйіп қалуды баяндайды" data-ru="учителей сообщают о высоком уровне стресса и выгорания">of teachers report high levels of stress and burnout</div>
+                </div>
+                <div class="stat-card card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <div class="stat-number">42%</div>
+                    <div class="stat-text" data-en="feel isolated without professional support networks" data-kk="кәсіби қолдау желілері жоқ ожалғандық сезімі" data-ru="чувствуют изоляцию без профессиональных сетей поддержки">feel isolated without professional support networks</div>
+                </div>
+                <div class="stat-card card">
+                    <div class="stat-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="stat-number">35%</div>
+                    <div class="stat-text" data-en="consider leaving the profession within 5 years" data-kk="5 жыл ішінде кәсіптен кетуді ойластырады" data-ru="рассматривают возможность ухода из профессии в течение 5 лет">consider leaving the profession within 5 years</div>
+                </div>
+                <div class="stat-card card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-number">50+</div>
+                    <div class="stat-text" data-en="hours worked weekly with limited resources" data-kk="шектеулі ресурстармен аптасына 50+ сағат жұмыс" data-ru="часов работы в неделю с ограниченными ресурсами">hours worked weekly with limited resources</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-en="How UstazTilek Helps" data-kk="UstazTilek қалай көмектеседі" data-ru="Как UstazTilek помогает">How UstazTilek Helps</h2>
+                <p data-en="Our platform provides comprehensive support tailored to the needs of educators in Kazakhstan." data-kk="Біздің платформа Қазақстандағы мұғалімдердің қажеттіліктеріне бейімделген кешенді қолдауды ұсынады." data-ru="Наша платформа предоставляет комплексную поддержку, адаптированную к потребностям педагогов в Казахстане.">Our platform provides comprehensive support tailored to the needs of educators in Kazakhstan.</p>
+            </div>
+            <div class="features-container">
+                <div class="feature-card card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 data-en="Psychological Support" data-kk="Психологиялық қолдау" data-ru="Психологическая поддержка">Psychological Support</h3>
+                    <p data-en="Access articles, videos, and anonymous chat with mental health professionals specializing in educator wellbeing." data-kk="Мұғалімдердің саулығына маманданған психикалық денсаулық мамандарымен мақалаларға, бейнелерге және анонимді сөйлесуге қол жеткізіңіз." data-ru="Доступ к статьям, видео и анонимному чату с профессионалами в области психического здоровья, специализирующимися на благополучии педагогов.">Access articles, videos, and anonymous chat with mental health professionals specializing in educator wellbeing.</p>
+                </div>
+                <div class="feature-card card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3 data-en="Mentorship System" data-kk="Тәлімгерлік жүйесі" data-ru="Система наставничества">Mentorship System</h3>
+                    <p data-en="Find experienced mentors or become one to share knowledge and guidance with fellow educators." data-kk="Тәжірибелі тәлімгерлерді табыңыз немесе білім мен нұсқаулықты басқа мұғалімдермен бөлісу үшін тәлімгер болыңыз." data-ru="Найдите опытных наставников или станьте одним из них, чтобы делиться знаниями и руководством с коллегами-педагогами.">Find experienced mentors or become one to share knowledge and guidance with fellow educators.</p>
+                </div>
+                <div class="feature-card card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 data-en="Community Groups" data-kk="Қауымдастық топтары" data-ru="Группы сообщества">Community Groups</h3>
+                    <p data-en="Join safe discussion groups organized by subject, region, or interest to share experiences and solutions." data-kk="Тәжірибелер мен шешімдерді бөлісу үшін пән, аймақ немесе қызығушылық бойынша ұйымдастырылған қауіпсіз талқылау топтарына қосылыңыз." data-ru="Присоединяйтесь к безопасным дискуссионным группам, организованным по предметам, регионам или интересам, чтобы делиться опытом и решениями.">Join safe discussion groups organized by subject, region, or interest to share experiences and solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Inspiration Section -->
+    <section id="global" class="global-inspiration">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-en="Global Inspiration" data-kk="Шетелдік тәжірибе" data-ru="Глобальный опыт">Global Inspiration</h2>
+                <p data-en="Learning from international teacher wellbeing and mentorship programs" data-kk="Халықаралық мұғалімдердің саулығы және тәлімгерлік бағдарламаларынан үйрену" data-ru="Изучение международных программ благополучия и наставничества для учителей">Learning from international teacher wellbeing and mentorship programs</p>
+            </div>
+            <div class="inspiration-container">
+                <div class="inspiration-card card">
+                    <div class="inspiration-logo">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>BetterHelp for Educators</h3>
+                    <p data-en="Online psychological support platform specifically designed for teachers in the USA, offering counseling and mental health resources." data-kk="АҚШ-тағы мұғалімдерге арнайы арналған психологиялық қолдау платформасы, кеңес беру және психикалық денсаулық ресурстарын ұсынады." data-ru="Платформа психологической поддержки, специально разработанная для учителей в США, предлагающая консультации и ресурсы для психического здоровья.">Online psychological support platform specifically designed for teachers in the USA, offering counseling and mental health resources.</p>
+                    <a href="#" class="btn btn-secondary" data-en="Learn More" data-kk="Толығырақ" data-ru="Узнать больше">Learn More</a>
+                </div>
+                <div class="inspiration-card card">
+                    <div class="inspiration-logo">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Tes Wellbeing Hub</h3>
+                    <p data-en="UK-based peer-to-peer community providing resources, articles, and forums for educators to support each other's mental health." data-kk="Ұлыбританиядағы мұғалімдердің бір-бірінің психикалық денсаулығын қолдау үшін ресурстар, мақалалар және форумдарды ұсынатын теңдес қауымдастық." data-ru="Сообщество в Великобритании, предоставляющее ресурсы, статьи и форумы для педагогов, чтобы поддерживать психическое здоровье друг друга.">UK-based peer-to-peer community providing resources, articles, and forums for educators to support each other's mental health.</p>
+                    <a href="#" class="btn btn-secondary" data-en="Learn More" data-kk="Толығырақ" data-ru="Узнать больше">Learn More</a>
+                </div>
+                <div class="inspiration-card card">
+                    <div class="inspiration-logo">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Teacher Wellbeing Australia</h3>
+                    <p data-en="Australian program focusing on mentorship and burnout prevention through workshops, resources, and peer support networks." data-kk="Семинарлар, ресурстар және теңдес қолдау желілері арқылы тәлімгерлік және күйіп қалудың алдын алуға баса назар аударатын австралиялық бағдарлама." data-ru="Австралийская программа, ориентированная на наставничество и предотвращение выгорания через семинары, ресурсы и сети поддержки коллег.">Australian program focusing on mentorship and burnout prevention through workshops, resources, and peer support networks.</p>
+                    <a href="#" class="btn btn-secondary" data-en="Learn More" data-kk="Толығырақ" data-ru="Узнать больше">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-en="Voices From Our Community" data-kk="Біздің қауымдастықтан дауыстар" data-ru="Голоса из нашего сообщества">Voices From Our Community</h2>
+                <p data-en="Hear from educators who have found support through UstazTilek." data-kk="UstazTilek арқылы қолдау тапқан мұғалімдерден естіңіз." data-ru="Послушайте педагогов, которые нашли поддержку через UstazTilek.">Hear from educators who have found support through UstazTilek.</p>
+            </div>
+            <div class="testimonials-container">
+                <div class="testimonial-card card">
+                    <div class="testimonial-text" data-en="After 15 years of teaching, I was considering early retirement due to burnout. UstazTilek connected me with a mentor who helped me rediscover my passion for education." data-kk="15 жыл оқытудан кейін мен күйіп қалу себебінен ерте зейнеткерлікке шығуды ойластырып жүрдім. UstazTilek мені білімге деген құштарлығымды қайта табуға көмектескен тәлімгермен байланыстырды." data-ru="После 15 лет преподавания я рассматривал возможность досрочного выхода на пенсию из-за выгорания. UstazTilek связал меня с наставником, который помог мне заново открыть для себя страсть к образованию.">After 15 years of teaching, I was considering early retirement due to burnout. UstazTilek connected me with a mentor who helped me rediscover my passion for education.</div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Aigerim S.</h4>
+                            <p data-en="Chemistry Teacher, Almaty" data-kk="Химия пәні мұғалімі, Алматы" data-ru="Учитель химии, Алматы">Chemistry Teacher, Almaty</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card card">
+                    <div class="testimonial-text" data-en="The anonymous chat feature gave me the courage to seek help for my anxiety. I finally found someone who understands the unique challenges teachers face." data-kk="Анонимді чат мүмкіндігі маған мазасыздығым үшін көмек сұрауға батылдық сыйлады. Мен ақырында мұғалімдердің алдында тұрған бірегей қиындықтарды түснетін біреуді таптым." data-ru="Функция анонимного чата дала мне смелость обратиться за помощью по поводу моего беспокойства. Я наконец нашел того, кто понимает уникальные проблемы, с которыми сталкиваются учителя.">The anonymous chat feature gave me the courage to seek help for my anxiety. I finally found someone who understands the unique challenges teachers face.</div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Marat K.</h4>
+                            <p data-en="Primary Teacher, Astana" data-kk="Бастауыш сынып мұғалімі, Астана" data-ru="Учитель начальных классов, Астана">Primary Teacher, Astana</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card card">
+                    <div class="testimonial-text" data-en="As a new teacher, I felt overwhelmed. Through UstazTilek, I found experienced mentors who guided me through my first year with practical advice and emotional support." data-kk="Жаңа мұғалім ретінде мен басым айналды. UstazTilek арқылы мен бірінші жылымда практикалық кеңестер мен эмоционалдық қолдау арқылы мені бағыттаған тәжірибелі тәлімгерлерді таптым." data-ru="Как новый учитель, я чувствовал себя перегруженным. Через UstazTilek я нашел опытных наставников, которые провели меня через мой первый год с практическими советами и эмоциональной поддержкой.">As a new teacher, I felt overwhelmed. Through UstazTilek, I found experienced mentors who guided me through my first year with practical advice and emotional support.</div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Zhanar T.</h4>
+                            <p data-en="English Teacher, Shymkent" data-kk="Ағылшын тілі мұғалімі, Шымкент" data-ru="Учитель английского языка, Шымкент">English Teacher, Shymkent</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commercialization Section -->
+    <section id="commercialization">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-en="How UstazTilek Sustains and Grows" data-kk="UstazTilek қалай тұрақталады және дамиды" data-ru="Как UstazTilek поддерживается и развивается">How UstazTilek Sustains and Grows</h2>
+                <p data-en="The platform is designed for long-term social and financial sustainability." data-kk="Платформа ұзақ мерзімді әлеуметтік және қаржылық тұрақтылық үшін жасалған." data-ru="Платформа разработана для долгосрочной социальной и финансовой устойчивости.">The platform is designed for long-term social and financial sustainability.</p>
+            </div>
+            <div class="commercialization-cards">
+                <div class="commercial-card card">
+                    <div class="commercial-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 data-en="Freemium Model" data-kk="Тегін модель" data-ru="Freemium модель">Freemium Model</h3>
+                    <p data-en="Basic support and community access are free; premium features available by subscription." data-kk="Негізгі қолдау және қауымдастыққа кіру тегін; премиум мүмкіндіктер жазылым арқылы қол жетімді." data-ru="Базовая поддержка и доступ к сообществу бесплатны; премиум-функции доступны по подписке.">Basic support and community access are free; premium features available by subscription.</p>
+                </div>
+                <div class="commercial-card card">
+                    <div class="commercial-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 data-en="Partnerships" data-kk="Серіктестіктер" data-ru="Партнерства">Partnerships</h3>
+                    <p data-en="Collaboration with Ministry of Education, Nazarbayev Intellectual Schools, and NGOs." data-kk="Білім министрлігі, Назарбаев Зияткерлік мектептері және БҰҰ-лармен ынтымақтастық." data-ru="Сотрудничество с Министерством образования, Назарбаев Интеллектуальными школами и НПО.">Collaboration with Ministry of Education, Nazarbayev Intellectual Schools, and NGOs.</p>
+                </div>
+                <div class="commercial-card card">
+                    <div class="commercial-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 data-en="Corporate Plans" data-kk="Корпоративтік жоспарлар" data-ru="Корпоративные планы">Corporate Plans</h3>
+                    <p data-en="Schools and education centers can sponsor memberships for their teachers." data-kk="Мектептер мен білім беру орталықтары өз мұғалімдері үшін мүшелікке демеушілік жасай алады." data-ru="Школы и образовательные центры могут спонсировать членство для своих учителей.">Schools and education centers can sponsor memberships for their teachers.</p>
+                </div>
+                <div class="commercial-card card">
+                    <div class="commercial-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 data-en="Grants & Funding" data-kk="Гранттар және қаржыландыру" data-ru="Гранты и финансирование">Grants & Funding</h3>
+                    <p data-en="Support from innovation funds, educational grants, and EdTech accelerators." data-kk="Инновациялық қорлар, білім беру гранттары және EdTech жеделдеткіштерінен қолдау." data-ru="Поддержка от инновационных фондов, образовательных грантов и EdTech-акселераторов.">Support from innovation funds, educational grants, and EdTech accelerators.</p>
+                </div>
+            </div>
+            <div class="commercial-cta">
+                <p style="margin-bottom: 20px;" data-en="Want to partner with us?" data-kk="Бізбен серіктес болғыңыз келе ме?" data-ru="Хотите стать нашим партнером?">Want to partner with us?</p>
+                <a href="#contact" class="btn btn-primary" data-en="Contact the UstazTilek Team" data-kk="UstazTilek тобымен байланысу" data-ru="Связаться с командой UstazTilek">Contact the UstazTilek Team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Section -->
+    <section id="join" class="join">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-en="Join Our Community" data-kk="Біздің қауымдастыққа қосылыңыз" data-ru="Присоединяйтесь к нашему сообществу">Join Our Community</h2>
+                <p data-en="Become part of the movement to support educators across Kazakhstan." data-kk="Бүкіл Қазақстан бойынша мұғалімдерді қолдау қозғалысының бір бөлігі болыңыз." data-ru="Станьте частью движения по поддержке педагогов по всему Казахстану.">Become part of the movement to support educators across Kazakhstan.</p>
+            </div>
+            <div class="join-container">
+                <div class="form-container">
+                    <div class="role-buttons">
+                        <div class="role-btn active" data-en="Join as Teacher" data-kk="Мұғалім ретінде қосылу" data-ru="Присоединиться как учитель">Join as Teacher</div>
+                        <div class="role-btn" data-en="Join as Mentor" data-kk="Тәлімгер ретінде қосылу" data-ru="Присоединиться как наставник">Join as Mentor</div>
+                    </div>
+                    <form id="join-form">
+                        <div class="form-group">
+                            <label for="name" data-en="Full Name" data-kk="Толық аты-жөні" data-ru="Полное имя">Full Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" data-en="Subject / Specialty" data-kk="Пән / Мамандық" data-ru="Предмет / Специальность">Subject / Specialty</label>
+                            <input type="text" id="subject" class="form-control" placeholder="e.g., Mathematics, Primary Education">
+                        </div>
+                        <div class="form-group">
+                            <label for="experience" data-en="Years of Experience" data-kk="Тәжірибе жылдары" data-ru="Годы опыта">Years of Experience</label>
+                            <select id="experience" class="form-control">
+                                <option value="" data-en="Select your experience" data-kk="Тәжірибеңізді таңдаңыз" data-ru="Выберите ваш опыт">Select your experience</option>
+                                <option value="0-2" data-en="0-2 years" data-kk="0-2 жыл" data-ru="0-2 года">0-2 years</option>
+                                <option value="3-5" data-en="3-5 years" data-kk="3-5 жыл" data-ru="3-5 лет">3-5 years</option>
+                                <option value="6-10" data-en="6-10 years" data-kk="6-10 жыл" data-ru="6-10 лет">6-10 years</option>
+                                <option value="10+" data-en="10+ years" data-kk="10+ жыл" data-ru="10+ лет">10+ years</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="city" data-en="City / Region" data-kk="Қала / Аймақ" data-ru="Город / Регион">City / Region</label>
+                            <input type="text" id="city" class="form-control" placeholder="Enter your location">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-en="Email Address" data-kk="Электрондық пошта" data-ru="Адрес электронной почты">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="Enter your email">
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;" data-en="Join UstazTilek" data-kk="UstazTilek-ке қосылу" data-ru="Присоединиться к UstazTilek">Join UstazTilek</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Contact Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-en="About Our Team" data-kk="Біздің топ туралы" data-ru="О нашей команде">About Our Team</h2>
+                <p data-en="Meet the innovators behind UstazTilek — passionate about teacher wellbeing and EdTech in Kazakhstan." data-kk="UstazTilek-тің артындағы инноваторлармен танысыңыз — Қазақстандағы мұғалімдердің саулығы және EdTech саласына құштар." data-ru="Познакомьтесь с инноваторами, стоящими за UstazTilek — увлеченными благополучием учителей и EdTech в Казахстане.">Meet the innovators behind UstazTilek — passionate about teacher wellbeing and EdTech in Kazakhstan.</p>
+            </div>
+            <div class="team-container">
+                <div class="team-card card">
+                    <div class="team-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Aisha Nurmagambetova</h3>
+                    <p data-en="Project Lead & Education Specialist" data-kk="Жоба жетекшісі және білім беру маманы" data-ru="Руководитель проекта и специалист по образованию">Project Lead & Education Specialist</p>
+                </div>
+                <div class="team-card card">
+                    <div class="team-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Daniyar Zhaksylykov</h3>
+                    <p data-en="Tech Lead & Full-Stack Developer" data-kk="Техникалық жетекші және Full-Stack әзірлеуші" data-ru="Технический руководитель и Full-Stack разработчик">Tech Lead & Full-Stack Developer</p>
+                </div>
+                <div class="team-card card">
+                    <div class="team-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Madina Omarova</h3>
+                    <p data-en="Psychology & Community Manager" data-kk="Психология және қауымдастық менеджері" data-ru="Психолог и менеджер сообщества">Psychology & Community Manager</p>
+                </div>
+                <div class="team-card card">
+                    <div class="team-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Arman Iskakov</h3>
+                    <p data-en="Business Development & Partnerships" data-kk="Бизнес дамыту және серіктестіктер" data-ru="Развитие бизнеса и партнерства">Business Development & Partnerships</p>
+                </div>
+            </div>
+            <div class="contact-form" id="contact">
+                <div class="section-header">
+                    <h2 data-en="Get In Touch" data-kk="Байланыс үшін" data-ru="Свяжитесь с нами">Get In Touch</h2>
+                    <p data-en="Have questions or want to collaborate? Reach out to our team." data-kk="Сұрақтарыңыз бар ма немесе ынтымақтасқыңыз келе ме? Біздің топқа хабарласыңыз." data-ru="Есть вопросы или хотите сотрудничать? Свяжитесь с нашей командой.">Have questions or want to collaborate? Reach out to our team.</p>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Your Name" data-en-placeholder="Your Name" data-kk-placeholder="Сіздің атыңыз" data-ru-placeholder="Ваше имя">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Your Email" data-en-placeholder="Your Email" data-kk-placeholder="Сіздің электрондық поштаңыз" data-ru-placeholder="Ваш email">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="5" placeholder="Your Message" data-en-placeholder="Your Message" data-kk-placeholder="Сіздің хабарламаңыз" data-ru-placeholder="Ваше сообщение"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" data-en="Send Message" data-kk="Хабарлама жіберу" data-ru="Отправить сообщение">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>UstazTilek</h3>
+                    <p data-en="Supporting teacher wellbeing and professional growth in Kazakhstan through technology and community." data-kk="Технология және қауымдастық арқылы Қазақстандағы мұғалімдердің саулығы мен кәсіби өсуін қолдау." data-ru="Поддержка благополучия и профессионального роста учителей в Казахстане с помощью технологий и сообщества.">Supporting teacher wellbeing and professional growth in Kazakhstan through technology and community.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3 data-en="Quick Links" data-kk="Жылдам сілтемелер" data-ru="Быстрые ссылки">Quick Links</h3>
+                    <ul>
+                        <li><a href="#problem" data-en="The Problem" data-kk="Мәселе" data-ru="Проблема">The Problem</a></li>
+                        <li><a href="#solution" data-en="Our Solution" data-kk="Біздің шешіміміз" data-ru="Наше решение">Our Solution</a></li>
+                        <li><a href="#global" data-en="Inspiration" data-kk="Шетелдік тәжірибе" data-ru="Глобальный опыт">Inspiration</a></li>
+                        <li><a href="#testimonials" data-en="Testimonials" data-kk="Пікірлер" data-ru="Отзывы">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 data-en="Resources" data-kk="Ресурстар" data-ru="Ресурсы">Resources</h3>
+                    <ul>
+                        <li><a href="#" data-en="Teacher Wellbeing Guide" data-kk="Мұғалімдердің саулығы нұсқаулығы" data-ru="Руководство по благополучию учителей">Teacher Wellbeing Guide</a></li>
+                        <li><a href="#" data-en="Mentorship Program" data-kk="Тәлімгерлік бағдарламасы" data-ru="Программа наставничества">Mentorship Program</a></li>
+                        <li><a href="#" data-en="Community Guidelines" data-kk="Қауымдастық нұсқаулығы" data-ru="Правила сообщества">Community Guidelines</a></li>
+                        <li><a href="#" data-en="Research & Impact" data-kk="Зерттеу және әсер" data-ru="Исследования и влияние">Research & Impact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 data-en="Legal" data-kk="Заңды" data-ru="Правовая информация">Legal</h3>
+                    <ul>
+                        <li><a href="#" data-en="Privacy Policy" data-kk="Құпиялылық саясаты" data-ru="Политика конфиденциальности">Privacy Policy</a></li>
+                        <li><a href="#" data-en="Terms of Service" data-kk="Қызмет көрсету шарттары" data-ru="Условия обслуживания">Terms of Service</a></li>
+                        <li><a href="#" data-en="Cookie Policy" data-kk="Cookie саясаты" data-ru="Политика использования файлов cookie">Cookie Policy</a></li>
+                        <li><a href="#" data-en="Data Protection" data-kk="Деректерді қорғау" data-ru="Защита данных">Data Protection</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 UstazTilek. <span data-en="All rights reserved." data-kk="Барлық құқықтар қорғалған." data-ru="Все права защищены.">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
 </html>
