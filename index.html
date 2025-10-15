@@ -26,6 +26,8 @@
             --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.06);
             --border-radius: 16px;
             --transition: all 0.3s ease;
+            --gradient-primary: linear-gradient(135deg, var(--primary-teal) 0%, var(--dark-teal) 100%);
+            --gradient-light: linear-gradient(135deg, var(--light-teal) 0%, var(--white) 100%);
         }
 
         * {
@@ -79,13 +81,12 @@
         }
 
         .btn-primary {
-            background-color: var(--primary-teal);
+            background: var(--gradient-primary);
             color: white;
             box-shadow: var(--shadow-light);
         }
 
         .btn-primary:hover {
-            background-color: var(--dark-teal);
             transform: translateY(-2px);
             box-shadow: var(--shadow);
         }
@@ -179,10 +180,26 @@
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
+            position: relative;
         }
 
         nav a:hover {
             color: var(--primary-teal);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-teal);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
         }
 
         .auth-buttons {
@@ -250,6 +267,12 @@
             box-shadow: var(--shadow);
             width: 90%;
             max-width: 400px;
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translate(-50%, -60%); }
+            to { opacity: 1; transform: translate(-50%, -50%); }
         }
 
         .modal-header {
@@ -332,8 +355,9 @@
         .hero {
             padding-top: 140px;
             padding-bottom: 80px;
-            background: linear-gradient(135deg, var(--light-teal) 0%, var(--white) 100%);
+            background: var(--gradient-light);
             position: relative;
+            overflow: hidden;
         }
 
         .hero-content {
@@ -687,7 +711,7 @@
 
         /* Join Section */
         .join {
-            background: linear-gradient(135deg, var(--light-teal) 0%, var(--white) 100%);
+            background: var(--gradient-light);
         }
 
         .join-container {
@@ -1049,6 +1073,37 @@
             padding: 10px 25px;
         }
 
+        /* Footer */
+        footer {
+            background-color: var(--dark-teal);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-logo {
+            color: white;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .footer-social a {
+            color: white;
+            font-size: 20px;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            color: var(--light-teal);
+        }
+
         /* Responsive Styles */
         @media (max-width: 1024px) {
             .hero h1 {
@@ -1222,121 +1277,121 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Teachers collaborating">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Teachers collaborating">
             </div>
         </div>
     </section>
 
     <!-- Problem Section -->
-    <section id="problem" class="problem">
+    <section class="problem" id="problem">
         <div class="container">
             <div class="section-header">
-                <h2 data-en="The Challenge Facing Teachers" data-kk="Мұғалімдердің алдында тұрған мәселелер" data-ru="Проблемы, с которыми сталкиваются учителя">The Challenge Facing Teachers</h2>
-                <p data-en="Educators in Kazakhstan face unique pressures that impact their wellbeing and effectiveness in the classroom." data-kk="Қазақстандағы мұғалімдер олардың саулығына және сыныптағы тиімділігіне әсер ететін ерекше қысымға тап болады." data-ru="Педагоги в Казахстане сталкиваются с уникальным давлением, которое влияет на их благополучие и эффективность в классе.">Educators in Kazakhstan face unique pressures that impact their wellbeing and effectiveness in the classroom.</p>
+                <h2 data-en="The Problem We're Solving" data-kk="Біз шешетін мәселе" data-ru="Проблема, которую мы решаем">The Problem We're Solving</h2>
+                <p data-en="Teachers in Kazakhstan face unique challenges that affect their well-being and effectiveness." data-kk="Қазақстандағы мұғалімдер олардың әл-ауқаты мен тиімділігіне әсер ететін ерекше қиындықтарға тап болады." data-ru="Учителя в Казахстане сталкиваются с уникальными проблемами, которые влияют на их благополучие и эффективность.">Teachers in Kazakhstan face unique challenges that affect their well-being and effectiveness.</p>
             </div>
             <div class="stats-container">
-                <div class="card stat-card">
+                <div class="stat-card card">
                     <div class="stat-icon">
                         <i class="fas fa-burn"></i>
                     </div>
                     <div class="stat-number">68%</div>
-                    <div class="stat-text" data-en="report high levels of burnout" data-kk="жаншу деңгейі жоғары екенін хабарлайды" data-ru="сообщают о высоком уровне выгорания">report high levels of burnout</div>
+                    <div class="stat-text" data-en="of teachers experience burnout" data-kk="мұғалімдер күйіп қалуды бастан кешіреді" data-ru="учителей испытывают выгорание">of teachers experience burnout</div>
                 </div>
-                <div class="card stat-card">
+                <div class="stat-card card">
                     <div class="stat-icon">
                         <i class="fas fa-user-friends"></i>
                     </div>
                     <div class="stat-number">42%</div>
-                    <div class="stat-text" data-en="feel isolated in their work" data-kk="өз жұмысында оқшауланғанды сезеді" data-ru="чувствуют изоляцию в своей работе">feel isolated in their work</div>
+                    <div class="stat-text" data-en="feel isolated in their profession" data-kk="өз кәсібінде оқшауланғанды сезінеді" data-ru="чувствуют изоляцию в своей профессии">feel isolated in their profession</div>
                 </div>
-                <div class="card stat-card">
+                <div class="stat-card card">
                     <div class="stat-icon">
                         <i class="fas fa-hand-holding-heart"></i>
                     </div>
-                    <div class="stat-number">57%</div>
-                    <div class="stat-text" data-en="lack access to mental health resources" data-kk="психикалық денсаулық ресурстарына қол жеткізе алмайды" data-ru="не имеют доступа к ресурсам психического здоровья">lack access to mental health resources</div>
+                    <div class="stat-number">74%</div>
+                    <div class="stat-text" data-en="lack access to psychological support" data-kk="психологиялық қолдауға қол жетімділігі жоқ" data-ru="не имеют доступа к психологической поддержке">lack access to psychological support</div>
                 </div>
-                <div class="card stat-card">
+                <div class="stat-card card">
                     <div class="stat-icon">
-                        <i class="fas fa-chalkboard"></i>
+                        <i class="fas fa-chart-line"></i>
                     </div>
-                    <div class="stat-number">3.5/5</div>
-                    <div class="stat-text" data-en="average job satisfaction rating" data-kk="орташа жұмыс қанағаттану рейтингі" data-ru="средний рейтинг удовлетворенности работой">average job satisfaction rating</div>
+                    <div class="stat-number">56%</div>
+                    <div class="stat-text" data-en="consider leaving the profession" data-kk="кәсіптен кетуді ойластырады" data-ru="рассматривают возможность ухода из профессии">consider leaving the profession</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Solution Section -->
-    <section id="solution">
+    <section class="solution" id="solution">
         <div class="container">
             <div class="section-header">
-                <h2 data-en="How UstazTilek Helps" data-kk="UstazTilek қалай көмектеседі" data-ru="Как UstazTilek помогает">How UstazTilek Helps</h2>
-                <p data-en="Our platform provides comprehensive support tailored to the unique needs of educators." data-kk="Біздің платформа мұғалімдердің ерекше қажеттіліктеріне бейімделген жан-жақты қолдауды ұсынады." data-ru="Наша платформа предоставляет комплексную поддержку, адаптированную к уникальным потребностям педагогов.">Our platform provides comprehensive support tailored to the unique needs of educators.</p>
+                <h2 data-en="Our Solution" data-kk="Біздің шешіміміз" data-ru="Наше решение">Our Solution</h2>
+                <p data-en="UstazTilek provides a comprehensive support system for educators across Kazakhstan." data-kk="UstazTilek Қазақстан бойынша мұғалімдерге жан-жақты қолдау жүйесін ұсынады." data-ru="UstazTilek предоставляет всестороннюю систему поддержки для педагогов по всему Казахстану.">UstazTilek provides a comprehensive support system for educators across Kazakhstan.</p>
             </div>
             <div class="features-container">
-                <div class="card feature-card">
+                <div class="feature-card card">
                     <div class="feature-icon">
                         <i class="fas fa-comments"></i>
                     </div>
                     <h3 data-en="Peer Support Network" data-kk="Құрдас қолдау желісі" data-ru="Сеть поддержки коллег">Peer Support Network</h3>
-                    <p data-en="Connect with fellow educators to share experiences, advice, and encouragement." data-kk="Тәжірибелеріңізбен бөлісу, кеңес алу және екпін беру үшін әріптес мұғалімдермен байланысыңыз." data-ru="Общайтесь с коллегами-педагогами, чтобы делиться опытом, советами и поддержкой.">Connect with fellow educators to share experiences, advice, and encouragement.</p>
+                    <p data-en="Connect with fellow educators to share experiences, advice, and encouragement." data-kk="Тәжірибелермен, кеңестермен және екпелекпен бөлісу үшін әріптес мұғалімдермен байланысыңыз." data-ru="Общайтесь с коллегами-педагогами, чтобы делиться опытом, советами и поддержкой.">Connect with fellow educators to share experiences, advice, and encouragement.</p>
                 </div>
-                <div class="card feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-hands-helping"></i>
-                    </div>
-                    <h3 data-en="Mentorship Program" data-kk="Тәлімгерлік бағдарламасы" data-ru="Программа наставничества">Mentorship Program</h3>
-                    <p data-en="Experienced educators guide newcomers through the challenges of teaching." data-kk="Тәжірибелі мұғалімдер жаңадан келгендерге оқытудың қиындықтарымен жүруге көмектеседі." data-ru="Опытные педагоги помогают новичкам преодолевать трудности преподавания.">Experienced educators guide newcomers through the challenges of teaching.</p>
-                </div>
-                <div class="card feature-card">
+                <div class="feature-card card">
                     <div class="feature-icon">
                         <i class="fas fa-brain"></i>
                     </div>
                     <h3 data-en="Psychological Resources" data-kk="Психологиялық ресурстар" data-ru="Психологические ресурсы">Psychological Resources</h3>
-                    <p data-en="Access to mental health professionals and self-care tools designed for educators." data-kk="Мұғалімдерге арналған психикалық денсаулық мамандарына және өзін-өзі қолдау құралдарына қол жеткізу." data-ru="Доступ к специалистам по психическому здоровью и инструментам самопомощи, разработанным для педагогов.">Access to mental health professionals and self-care tools designed for educators.</p>
+                    <p data-en="Access to professional counseling, stress management tools, and mental health resources." data-kk="Кәсіби консультацияларға, стресті басқару құралдарына және психикалық денсаулық ресурстарына қол жеткізу." data-ru="Доступ к профессиональному консультированию, инструментам управления стрессом и ресурсам психического здоровья.">Access to professional counseling, stress management tools, and mental health resources.</p>
                 </div>
-                <div class="card feature-card">
+                <div class="feature-card card">
                     <div class="feature-icon">
-                        <i class="fas fa-graduation-cap"></i>
+                        <i class="fas fa-user-graduate"></i>
                     </div>
-                    <h3 data-en="Professional Development" data-kk="Кәсіби даму" data-ru="Профессиональное развитие">Professional Development</h3>
-                    <p data-en="Workshops, webinars, and resources to enhance teaching skills and career growth." data-kk="Оқыту дағдыларын және мансаптық өсуін арттыруға арналған семинарлар, вебинарлар және ресурстар." data-ru="Семинары, вебинары и ресурсы для улучшения педагогических навыков и карьерного роста.">Workshops, webinars, and resources to enhance teaching skills and career growth.</p>
+                    <h3 data-en="Mentorship Program" data-kk="Тәлімгерлік бағдарламасы" data-ru="Программа наставничества">Mentorship Program</h3>
+                    <p data-en="Experienced educators mentor newcomers, sharing wisdom and practical teaching strategies." data-kk="Тәжірибелі мұғалімдер жаңадан келгендерге тәлімгерлік жасап, даналық пен практикалық оқыту стратегияларымен бөліседі." data-ru="Опытные педагоги наставляют новичков, делясь мудростью и практическими стратегиями преподавания.">Experienced educators mentor newcomers, sharing wisdom and practical teaching strategies.</p>
+                </div>
+                <div class="feature-card card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 data-en="Teaching Resources" data-kk="Оқыту ресурстары" data-ru="Ресурсы для преподавания">Teaching Resources</h3>
+                    <p data-en="Share and discover lesson plans, classroom activities, and educational materials." data-kk="Сабақ жоспарларын, сынып ішілік әрекеттерді және білім беру материалдарын бөлісіңіз және ашыңыз." data-ru="Делитесь и находите планы уроков, классные занятия и образовательные материалы.">Share and discover lesson plans, classroom activities, and educational materials.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Global Inspiration Section -->
-    <section id="global" class="global-inspiration">
+    <section class="global-inspiration" id="global">
         <div class="container">
             <div class="section-header">
                 <h2 data-en="Global Inspiration" data-kk="Шетелдік тәжірибе" data-ru="Глобальный опыт">Global Inspiration</h2>
-                <p data-en="Successful teacher support platforms from around the world that inspire our approach." data-kk="Біздің тәсілімізге ынталандыратын әлемнің әр түкпіріндегі сәтті мұғалімдерді қолдау платформалары." data-ru="Успешные платформы поддержки учителей со всего мира, которые вдохновляют наш подход.">Successful teacher support platforms from around the world that inspire our approach.</p>
+                <p data-en="Successful teacher support platforms from around the world that inspire our approach." data-kk="Біздің тәсілімізге әсер ететін әлемнің әр түкпіріндегі сәтті мұғалімдерді қолдау платформалары." data-ru="Успешные платформы поддержки учителей со всего мира, которые вдохновляют наш подход.">Successful teacher support platforms from around the world that inspire our approach.</p>
             </div>
             <div class="inspiration-container">
-                <div class="card inspiration-card">
+                <div class="inspiration-card card">
                     <div class="inspiration-logo">
-                        <i class="fab fa-microsoft"></i>
-                    </div>
-                    <h3>Microsoft Educator Community</h3>
-                    <p data-en="Global platform for teacher collaboration and professional development." data-kk="Мұғалімдердің ынтымақтастығы және кәсіби дамуына арналған жаһандық платформа." data-ru="Глобальная платформа для сотрудничества учителей и профессионального развития.">Global platform for teacher collaboration and professional development.</p>
-                    <a href="#" class="btn btn-outline" data-en="Learn More" data-kk="Толығырақ" data-ru="Узнать больше">Learn More</a>
-                </div>
-                <div class="card inspiration-card">
-                    <div class="inspiration-logo">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <h3>Edutopia</h3>
-                    <p data-en="Resources and community for evidence-based K-12 education strategies." data-kk="Дәлелдік негізделген K-12 білім беру стратегияларына арналған ресурстар және қауымдастық." data-ru="Ресурсы и сообщество для научно обоснованных стратегий K-12 образования.">Resources and community for evidence-based K-12 education strategies.</p>
-                    <a href="#" class="btn btn-outline" data-en="Learn More" data-kk="Толығырақ" data-ru="Узнать больше">Learn More</a>
-                </div>
-                <div class="card inspiration-card">
-                    <div class="inspiration-logo">
-                        <i class="fas fa-chalkboard-teacher"></i>
+                        <i class="fas fa-graduation-cap"></i>
                     </div>
                     <h3>Teach For All</h3>
-                    <p data-en="Global network developing collective leadership in classrooms worldwide." data-kk="Бүкіл әлем бойынша сыныптарда ұжымдық көшбасшылықты дамытатын жаһандық желі." data-ru="Глобальная сеть, развивающая коллективное лидерство в классах по всему миру.">Global network developing collective leadership in classrooms worldwide.</p>
+                    <p data-en="Global network developing collective leadership to ensure all children can fulfill their potential." data-kk="Барлық балалар өз әлеуетін жүзеге асыра алатындай етіп, ұжымдық көшбасшылықты дамытатын жаһандық желі." data-ru="Глобальная сеть, развивающая коллективное лидерство, чтобы все дети могли реализовать свой потенциал.">Global network developing collective leadership to ensure all children can fulfill their potential.</p>
+                    <a href="#" class="btn btn-outline" data-en="Learn More" data-kk="Толығырақ" data-ru="Узнать больше">Learn More</a>
+                </div>
+                <div class="inspiration-card card">
+                    <div class="inspiration-logo">
+                        <i class="fas fa-chalkboard"></i>
+                    </div>
+                    <h3>Edutopia</h3>
+                    <p data-en="Comprehensive website and online community that increases knowledge, sharing, and adoption of what works in education." data-kk="Білімді, бөлісуді және білім беруде ненің жұмыс істейтінін қабылдауды арттыратын жан-жақты веб-сайт және онлайн қауымдастық." data-ru="Всеобъемлющий веб-сайт и онлайн-сообщество, которые увеличивают знания, обмен и внедрение того, что работает в образовании.">Comprehensive website and online community that increases knowledge, sharing, and adoption of what works in education.</p>
+                    <a href="#" class="btn btn-outline" data-en="Learn More" data-kk="Толығырақ" data-ru="Узнать больше">Learn More</a>
+                </div>
+                <div class="inspiration-card card">
+                    <div class="inspiration-logo">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>BetterLesson</h3>
+                    <p data-en="Provides personalized, continuous support for teachers through 1:1 coaching and professional learning." data-kk="Мұғалімдерге 1:1 коучинг және кәсіби оқыту арқылы жекелендірілген, үздіксіз қолдау көрсетеді." data-ru="Обеспечивает персонализированную, непрерывную поддержку учителей через 1:1 коучинг и профессиональное обучение.">Provides personalized, continuous support for teachers through 1:1 coaching and professional learning.</p>
                     <a href="#" class="btn btn-outline" data-en="Learn More" data-kk="Толығырақ" data-ru="Узнать больше">Learn More</a>
                 </div>
             </div>
@@ -1344,46 +1399,46 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
+    <section class="testimonials" id="testimonials">
         <div class="container">
             <div class="section-header">
                 <h2 data-en="What Teachers Say" data-kk="Мұғалімдер не дейді" data-ru="Что говорят учителя">What Teachers Say</h2>
-                <p data-en="Hear from educators who have found support and community through UstazTilek." data-kk="UstazTilek арқылы қолдау және қауымдастық тапқан мұғалімдерден естіңіз." data-ru="Услышьте от педагогов, которые нашли поддержку и сообщество через UstazTilek.">Hear from educators who have found support and community through UstazTilek.</p>
+                <p data-en="Hear from educators who have benefited from our support community." data-kk="Біздің қолдау қауымдастығымыздың арқасында пайда көрген мұғалімдерден естіңіз." data-ru="Услышьте от педагогов, которые получили пользу от нашего сообщества поддержки.">Hear from educators who have benefited from our support community.</p>
             </div>
             <div class="testimonials-container">
-                <div class="card testimonial-card">
-                    <p class="testimonial-text" data-en="UstazTilek helped me overcome burnout and reconnect with my passion for teaching. The community support is incredible." data-kk="UstazTilek жаншудан арылуға және оқытуға деген құштарлығыма қайта байланысуға көмектесті. Қауымдастықтың қолдауы тамаша." data-ru="UstazTilek помог мне преодолеть выгорание и восстановить связь с моей страстью к преподаванию. Поддержка сообщества невероятна.">UstazTilek helped me overcome burnout and reconnect with my passion for teaching. The community support is incredible.</p>
+                <div class="testimonial-card card">
+                    <div class="testimonial-text" data-en="UstazTilek helped me overcome burnout and rediscover my passion for teaching. The community support is incredible." data-kk="UstazTilek күйіп қалуды жеңуге және оқытуға деген құштарлығымды қайта табуға көмектесті. Қауымдастықтың қолдауы тамаша." data-ru="UstazTilek помог мне преодолеть выгорание и заново открыть свою страсть к преподаванию. Поддержка сообщества невероятна.">UstazTilek helped me overcome burnout and rediscover my passion for teaching. The community support is incredible.</div>
                     <div class="testimonial-author">
                         <div class="author-avatar">
                             <i class="fas fa-user"></i>
                         </div>
                         <div class="author-info">
                             <h4>Aigerim S.</h4>
-                            <p data-en="High School Teacher, Almaty" data-kk="Жоғары мектеп мұғалімі, Алматы" data-ru="Учитель старшей школы, Алматы">High School Teacher, Almaty</p>
+                            <p data-en="Math Teacher, Nur-Sultan" data-kk="Математика мұғалімі, Нұр-Сұлтан" data-ru="Учитель математики, Нур-Султан">Math Teacher, Nur-Sultan</p>
                         </div>
                     </div>
                 </div>
-                <div class="card testimonial-card">
-                    <p class="testimonial-text" data-en="As a new teacher, I felt overwhelmed. The mentorship program gave me confidence and practical strategies for my classroom." data-kk="Жаңа мұғалім ретінде мен басым айналып кеткендей сезіндім. Тәлімгерлік бағдарламасы менің өзіме сенімділік пен сыныбым үшін практикалық стратегиялар берді." data-ru="Как новый учитель, я чувствовал себя перегруженным. Программа наставничества дала мне уверенность и практические стратегии для моего класса.">As a new teacher, I felt overwhelmed. The mentorship program gave me confidence and practical strategies for my classroom.</p>
+                <div class="testimonial-card card">
+                    <div class="testimonial-text" data-en="The mentorship program connected me with an experienced teacher who guided me through my first year. I couldn't have done it alone." data-kk="Тәлімгерлік бағдарламасы мені бірінші жылымда жолға салған тәжірибелі мұғаліммен байланыстырды. Мен мұны жалғыз орындай алмас едім." data-ru="Программа наставничества связала меня с опытным учителем, который направлял меня в мой первый год. Я бы не справился в одиночку.">The mentorship program connected me with an experienced teacher who guided me through my first year. I couldn't have done it alone.</div>
                     <div class="testimonial-author">
                         <div class="author-avatar">
                             <i class="fas fa-user"></i>
                         </div>
                         <div class="author-info">
                             <h4>Bakhytzhan K.</h4>
-                            <p data-en="Primary Teacher, Nur-Sultan" data-kk="Бастауыш сынып мұғалімі, Нұр-Сұлтан" data-ru="Учитель начальных классов, Нур-Султан">Primary Teacher, Nur-Sultan</p>
+                            <p data-en="Science Teacher, Almaty" data-kk="Ғылым мұғалімі, Алматы" data-ru="Учитель естественных наук, Алматы">Science Teacher, Almaty</p>
                         </div>
                     </div>
                 </div>
-                <div class="card testimonial-card">
-                    <p class="testimonial-text" data-en="The psychological resources helped me manage stress and maintain work-life balance. I'm a better teacher because of it." data-kk="Психологиялық ресурстар стресті басқаруға және жұмыс-тұрмыс теңгерімін сақтауға көмектесті. Оның арқасында мен жақсырақ мұғалім болдым." data-ru="Психологические ресурсы помогли мне справляться со стрессом и поддерживать баланс между работой и личной жизнью. Благодаря этому я стал лучше как учитель.">The psychological resources helped me manage stress and maintain work-life balance. I'm a better teacher because of it.</p>
+                <div class="testimonial-card card">
+                    <div class="testimonial-text" data-en="Having a safe space to share challenges and get advice from colleagues has been transformative for my teaching career." data-kk="Қиындықтармен бөлісу және әріптестерден кеңес алу үшін қауіпсіз кеңістік болу менің оқыту мансабым үшін түрлендіргіш болды." data-ru="Наличие безопасного пространства для обмена проблемами и получения советов от коллег стало преобразующим для моей преподавательской карьеры.">Having a safe space to share challenges and get advice from colleagues has been transformative for my teaching career.</div>
                     <div class="testimonial-author">
                         <div class="author-avatar">
                             <i class="fas fa-user"></i>
                         </div>
                         <div class="author-info">
                             <h4>Gulnara T.</h4>
-                            <p data-en="Science Teacher, Shymkent" data-kk="Ғылым мұғалімі, Шымкент" data-ru="Учитель естественных наук, Шымкент">Science Teacher, Shymkent</p>
+                            <p data-en="Primary Teacher, Shymkent" data-kk="Бастауыш сынып мұғалімі, Шымкент" data-ru="Учитель начальных классов, Шымкент">Primary Teacher, Shymkent</p>
                         </div>
                     </div>
                 </div>
@@ -1391,43 +1446,43 @@
         </div>
     </section>
 
-    <!-- Reddit-Style Chat Section -->
-    <section id="chat" class="chat-section">
+    <!-- Community Chat Section -->
+    <section class="chat-section" id="chat">
         <div class="container">
             <div class="section-header">
-                <h2 data-en="Teacher Community Chat" data-kk="Мұғалімдер қауымдастығы чаты" data-ru="Чат сообщества учителей">Teacher Community Chat</h2>
-                <p data-en="Connect with fellow educators, share experiences, ask questions, and find support." data-kk="Әріптес мұғалімдермен байланысыңыз, тәжірибелеріңізбен бөлісіңіз, сұрақтар қойыңыз және қолдау табыңыз." data-ru="Общайтесь с коллегами-педагогами, делитесь опытом, задавайте вопросы и находите поддержку.">Connect with fellow educators, share experiences, ask questions, and find support.</p>
+                <h2 data-en="Community Chat" data-kk="Қауымдастық чаты" data-ru="Чат сообщества">Community Chat</h2>
+                <p data-en="Join conversations, ask questions, and share experiences with fellow educators." data-kk="Әріптес мұғалімдермен әңгімелерге қосылыңыз, сұрақтар қойыңыз және тәжірибелермен бөлісіңіз." data-ru="Присоединяйтесь к беседам, задавайте вопросы и делитесь опытом с коллегами-педагогами.">Join conversations, ask questions, and share experiences with fellow educators.</p>
             </div>
             <div class="chat-container">
                 <div class="chat-sidebar">
                     <h3><i class="fas fa-list"></i> <span data-en="Categories" data-kk="Санаттар" data-ru="Категории">Categories</span></h3>
                     <ul class="chat-categories">
-                        <li class="active" data-category="all"><i class="fas fa-globe"></i> <span data-en="All Discussions" data-kk="Барлық талқылаулар" data-ru="Все обсуждения">All Discussions</span></li>
-                        <li data-category="burnout"><i class="fas fa-burn"></i> <span data-en="Burnout Support" data-kk="Жаншуға қарсы қолдау" data-ru="Поддержка при выгорании">Burnout Support</span></li>
-                        <li data-category="classroom"><i class="fas fa-chalkboard"></i> <span data-en="Classroom Management" data-kk="Сыныпты басқару" data-ru="Управление классом">Classroom Management</span></li>
-                        <li data-category="resources"><i class="fas fa-book"></i> <span data-en="Teaching Resources" data-kk="Оқыту ресурстары" data-ru="Ресурсы для преподавания">Teaching Resources</span></li>
-                        <li data-category="mentorship"><i class="fas fa-hands-helping"></i> <span data-en="Mentorship" data-kk="Тәлімгерлік" data-ru="Наставничество">Mentorship</span></li>
-                        <li data-category="selfcare"><i class="fas fa-heart"></i> <span data-en="Self-Care" data-kk="Өзін-өзі қолдау" data-ru="Самопомощь">Self-Care</span></li>
+                        <li class="active"><i class="fas fa-comments"></i> <span data-en="General Discussion" data-kk="Жалпы талқылау" data-ru="Общее обсуждение">General Discussion</span></li>
+                        <li><i class="fas fa-heart"></i> <span data-en="Mental Health" data-kk="Психикалық денсаулық" data-ru="Психическое здоровье">Mental Health</span></li>
+                        <li><i class="fas fa-lightbulb"></i> <span data-en="Teaching Tips" data-kk="Оқыту кеңестері" data-ru="Советы по преподаванию">Teaching Tips</span></li>
+                        <li><i class="fas fa-book"></i> <span data-en="Resources" data-kk="Ресурстар" data-ru="Ресурсы">Resources</span></li>
+                        <li><i class="fas fa-question-circle"></i> <span data-en="Q&A" data-kk="Сұрақ-жауап" data-ru="Вопросы и ответы">Q&A</span></li>
+                        <li><i class="fas fa-graduation-cap"></i> <span data-en="Mentorship" data-kk="Тәлімгерлік" data-ru="Наставничество">Mentorship</span></li>
                     </ul>
-                    <button class="btn btn-primary create-post-btn" id="createPostBtn" data-en="Create New Post" data-kk="Жаңа хабарлама жасау" data-ru="Создать новый пост">Create New Post</button>
+                    <button class="btn btn-primary create-post-btn" id="createPostBtn" data-en="Create Post" data-kk="Пост жасау" data-ru="Создать пост">Create Post</button>
                 </div>
                 <div class="chat-main">
                     <!-- Post 1 -->
-                    <div class="post-card" data-category="burnout">
+                    <div class="post-card">
                         <div class="post-header">
                             <div class="post-meta">
                                 <div class="post-avatar">
                                     <i class="fas fa-user"></i>
                                 </div>
                                 <div>
-                                    <div class="post-author">Aisha M.</div>
+                                    <div class="post-author">Aisha_M</div>
                                     <div class="post-time">2 hours ago</div>
                                 </div>
                             </div>
-                            <div class="post-category">Burnout Support</div>
+                            <div class="post-category">Mental Health</div>
                         </div>
-                        <h3 class="post-title" data-en="Feeling completely exhausted this semester" data-kk="Бұл семестрде мүлдем шаршап қалдым" data-ru="Чувствую себя полностью истощенной в этом семестре">Feeling completely exhausted this semester</h3>
-                        <div class="post-content" data-en="I've been teaching for 8 years, but this semester has been particularly challenging. The workload feels overwhelming, and I'm struggling to find joy in teaching. Has anyone else experienced this? How did you overcome it?" data-kk="Мен 8 жыл бойы оқытып келемін, бірақ бұл семестр ерекше қиын болды. Жұмыс жүктемесі басым айналып тұрғандай сезіледі, және мен оқытудан рахат табуға тырысып жатырмын. Басқа біреу мұны бастан кешірді ме? Сіз оны қалай жеңдіңіз?" data-ru="Я преподаю уже 8 лет, но этот семестр был особенно сложным. Нагрузка кажется непосильной, и я изо всех сил пытаюсь найти радость в преподавании. Кто-нибудь еще сталкивался с этим? Как вы с этим справились?">I've been teaching for 8 years, but this semester has been particularly challenging. The workload feels overwhelming, and I'm struggling to find joy in teaching. Has anyone else experienced this? How did you overcome it?</div>
+                        <h3 class="post-title" data-en="Dealing with classroom stress" data-kk="Сыныптағы стресті жеңу" data-ru="Борьба со стрессом в классе">Dealing with classroom stress</h3>
+                        <div class="post-content" data-en="I've been feeling overwhelmed with my large class sizes and the pressure to meet curriculum targets. Any advice on managing this stress would be appreciated." data-kk="Менің үлкен сынып өлшемдерім мен оқу бағдарламасының мақсаттарына жету қысымымен басым айналып кетті. Бұл стресті басқару бойынша кез келген кеңес құпталады." data-ru="Я чувствую себя перегруженной из-за больших размеров моего класса и давления необходимости достижения учебных целей. Буду благодарна за любые советы по управлению этим стрессом.">I've been feeling overwhelmed with my large class sizes and the pressure to meet curriculum targets. Any advice on managing this stress would be appreciated.</div>
                         <div class="post-actions">
                             <div class="post-action upvote">
                                 <i class="fas fa-arrow-up"></i>
@@ -1438,13 +1493,12 @@
                                 <span>2</span>
                             </div>
                             <div class="post-action">
-                                <i class="far fa-comment"></i>
-                                <span data-en="Comments" data-kk="Пікірлер" data-ru="Комментарии">Comments</span>
-                                <span>7</span>
+                                <i class="fas fa-comment"></i>
+                                <span>8</span>
                             </div>
                             <div class="post-action">
-                                <i class="far fa-bookmark"></i>
-                                <span data-en="Save" data-kk="Сақтау" data-ru="Сохранить">Save</span>
+                                <i class="fas fa-share"></i>
+                                <span data-en="Share" data-kk="Бөлісу" data-ru="Поделиться">Share</span>
                             </div>
                         </div>
                         <div class="comments-section">
@@ -1453,19 +1507,19 @@
                                     <div class="comment-avatar">
                                         <i class="fas fa-user"></i>
                                     </div>
-                                    <div class="comment-author">Marat Z.</div>
+                                    <div class="comment-author">Baurjan_T</div>
                                     <div class="comment-time">1 hour ago</div>
                                 </div>
-                                <div class="comment-content" data-en="I've been there, Aisha. What helped me was setting strict boundaries - no work emails after 6 PM and dedicating at least one full day on weekends to completely disconnect. It's not easy at first, but it makes a huge difference." data-kk="Мен де сол жағдайда болдым, Айша. Маған көмектескен нәрсе - қатаң шекараларды белгілеу - кешкі 6-дан кейін жұмыс электрондық пошталары жоқ және демалыс күндері кем дегенде бір толық күнді толығымен ажыратуға арнау. Алғашында оңай емес, бірақ ол үлкен айырмашылық жасайды." data-ru="Я тоже через это проходил, Аиша. Мне помогло установление строгих границ - никаких рабочих писем после 18:00 и выделение хотя бы одного полного дня на выходных для полного отключения. Сначала это нелегко, но это имеет огромное значение.">I've been there, Aisha. What helped me was setting strict boundaries - no work emails after 6 PM and dedicating at least one full day on weekends to completely disconnect. It's not easy at first, but it makes a huge difference.</div>
+                                <div class="comment-content" data-en="I found mindfulness exercises before class really help. Even just 5 minutes of breathing can make a difference." data-kk="Сабақтан бұрын саналылық жаттығулары шынымен көмектеседі. Тіпті 5 минуттық тыныс алу да өзгеріс әкеле алады." data-ru="Я обнаружил, что упражнения на осознанность перед уроком действительно помогают. Даже всего 5 минут дыхания могут изменить ситуацию.">I found mindfulness exercises before class really help. Even just 5 minutes of breathing can make a difference.</div>
                                 <div class="comment-actions">
                                     <div class="comment-action">
-                                        <i class="fas fa-arrow-up"></i>
+                                        <i class="fas fa-thumbs-up"></i>
                                         <span>5</span>
                                     </div>
                                     <div class="comment-action">
-                                        <i class="fas fa-arrow-down"></i>
+                                        <i class="fas fa-reply"></i>
+                                        <span data-en="Reply" data-kk="Жауап беру" data-ru="Ответить">Reply</span>
                                     </div>
-                                    <div class="comment-action" data-en="Reply" data-kk="Жауап беру" data-ru="Ответить">Reply</div>
                                 </div>
                             </div>
                             <div class="comment">
@@ -1473,91 +1527,62 @@
                                     <div class="comment-avatar">
                                         <i class="fas fa-user"></i>
                                     </div>
-                                    <div class="comment-author">Gulmira S.</div>
+                                    <div class="comment-author">Gulmira_S</div>
                                     <div class="comment-time">45 minutes ago</div>
                                 </div>
-                                <div class="comment-content" data-en="Have you tried the mindfulness exercises in the resources section? They've been a game-changer for me when I feel overwhelmed." data-kk="Ресурстар бөліміндегі саналылық жаттығуларын көрдіңіз бе? Мен басым айналғанда олар мен үшін ойын өзгертетін болды." data-ru="Вы пробовали упражнения на осознанность в разделе ресурсов? Они изменили правила игры для меня, когда я чувствую себя перегруженной.">Have you tried the mindfulness exercises in the resources section? They've been a game-changer for me when I feel overwhelmed.</div>
+                                <div class="comment-content" data-en="Don't try to do everything at once. Prioritize what's most important and remember that it's okay to ask for help from colleagues." data-kk="Барлығын бірден жасауға тырыспаңыз. Ең маңыздысын басымдыққа қойыңыз және әріптестерден көмек сұрау жақсы екенін есте сақтаңыз." data-ru="Не пытайтесь сделать все сразу. Расставьте приоритеты и помните, что можно просить помощи у коллег.">Don't try to do everything at once. Prioritize what's most important and remember that it's okay to ask for help from colleagues.</div>
                                 <div class="comment-actions">
                                     <div class="comment-action">
-                                        <i class="fas fa-arrow-up"></i>
+                                        <i class="fas fa-thumbs-up"></i>
                                         <span>3</span>
                                     </div>
                                     <div class="comment-action">
-                                        <i class="fas fa-arrow-down"></i>
+                                        <i class="fas fa-reply"></i>
+                                        <span data-en="Reply" data-kk="Жауап беру" data-ru="Ответить">Reply</span>
                                     </div>
-                                    <div class="comment-action" data-en="Reply" data-kk="Жауап беру" data-ru="Ответить">Reply</div>
                                 </div>
                             </div>
                             <div class="add-comment">
                                 <div class="comment-form">
-                                    <textarea class="comment-input" placeholder="Add a comment..." data-en-placeholder="Add a comment..." data-kk-placeholder="Пікір қосу..." data-ru-placeholder="Добавить комментарий..."></textarea>
-                                    <button class="btn btn-primary comment-submit" data-en="Comment" data-kk="Пікір қосу" data-ru="Комментировать">Comment</button>
+                                    <textarea class="comment-input" placeholder="Add a comment..." data-en="Add a comment..." data-kk="Пікір қосу..." data-ru="Добавить комментарий..."></textarea>
+                                    <button class="btn btn-primary comment-submit" data-en="Comment" data-kk="Пікірлеу" data-ru="Комментировать">Comment</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Post 2 -->
-                    <div class="post-card" data-category="classroom">
+                    <div class="post-card">
                         <div class="post-header">
                             <div class="post-meta">
                                 <div class="post-avatar">
                                     <i class="fas fa-user"></i>
                                 </div>
                                 <div>
-                                    <div class="post-author">Daniyar K.</div>
-                                    <div class="post-time">5 hours ago</div>
+                                    <div class="post-author">Daulet_K</div>
+                                    <div class="post-time">1 day ago</div>
                                 </div>
                             </div>
-                            <div class="post-category">Classroom Management</div>
+                            <div class="post-category">Teaching Tips</div>
                         </div>
-                        <h3 class="post-title" data-en="Effective strategies for engaging quiet students?" data-kk="Үнді студенттерді белсендіру үшін тиімді стратегиялар?" data-ru="Эффективные стратегии для вовлечения тихих студентов?">Effective strategies for engaging quiet students?</h3>
-                        <div class="post-content" data-en="I have a few students who rarely participate in class discussions. They seem intelligent and do well on assignments, but I'd like to help them become more active participants. What approaches have worked for you?" data-kk="Менің бірнеше студенттерім бар, олар сыныптағы талқылауларға сирек қатысады. Олар ақылды көрінеді және тапсырмаларды жақсы орындайды, бірақ мен оларға белсендірек қатысушылар болуға көмектескім келеді. Сізге қандай тәсілдер жарады?" data-ru="У меня есть несколько студентов, которые редко участвуют в обсуждениях в классе. Они кажутся умными и хорошо справляются с заданиями, но я хотел бы помочь им стать более активными участниками. Какие подходы сработали у вас?">I have a few students who rarely participate in class discussions. They seem intelligent and do well on assignments, but I'd like to help them become more active participants. What approaches have worked for you?</div>
+                        <h3 class="post-title" data-en="Effective strategies for engaging shy students" data-kk="Ұялшақ оқушыларды белсендірудің тиімді стратегиялары" data-ru="Эффективные стратегии вовлечения застенчивых студентов">Effective strategies for engaging shy students</h3>
+                        <div class="post-content" data-en="I have several students who rarely participate in class discussions. What methods have worked for you to encourage participation without putting them on the spot?" data-kk="Менің сыныптағы талқылауларға сирек қатысатын бірнеше оқушым бар. Оларды орнынан түрместен қоймай қатысуды ынталандыру үшін сізге қандай әдістер жарады?" data-ru="У меня есть несколько студентов, которые редко участвуют в классных обсуждениях. Какие методы сработали у вас для поощрения участия без создания для них неловкой ситуации?">I have several students who rarely participate in class discussions. What methods have worked for you to encourage participation without putting them on the spot?</div>
                         <div class="post-actions">
-                            <div class="post-action upvote">
+                            <div class="post-action upvote active">
                                 <i class="fas fa-arrow-up"></i>
-                                <span>18</span>
+                                <span>31</span>
                             </div>
                             <div class="post-action downvote">
                                 <i class="fas fa-arrow-down"></i>
                                 <span>1</span>
                             </div>
                             <div class="post-action">
-                                <i class="far fa-comment"></i>
-                                <span data-en="Comments" data-kk="Пікірлер" data-ru="Комментарии">Comments</span>
-                                <span>5</span>
+                                <i class="fas fa-comment"></i>
+                                <span>12</span>
                             </div>
                             <div class="post-action">
-                                <i class="far fa-bookmark"></i>
-                                <span data-en="Save" data-kk="Сақтау" data-ru="Сохранить">Save</span>
-                            </div>
-                        </div>
-                        <div class="comments-section">
-                            <div class="comment">
-                                <div class="comment-header">
-                                    <div class="comment-avatar">
-                                        <i class="fas fa-user"></i>
-                                    </div>
-                                    <div class="comment-author">Aruzhan T.</div>
-                                    <div class="comment-time">3 hours ago</div>
-                                </div>
-                                <div class="comment-content" data-en="I've had success with think-pair-share activities. It gives quiet students a chance to formulate their thoughts in a low-pressure setting before sharing with the whole class." data-kk="Мен think-pair-share белсенділіктерімен табысқа жеттім. Бұл үнді студенттерге бүкіл сыныппен бөлісу алдында төмен қысымды ортада ойларын қалыптастыруға мүмкіндік береді." data-ru="Мне помогли занятия по принципу 'подумай-обсуди в паре-поделись'. Это дает тихим студентам возможность сформулировать свои мысли в обстановке с низким давлением, прежде чем делиться со всем классом.">I've had success with think-pair-share activities. It gives quiet students a chance to formulate their thoughts in a low-pressure setting before sharing with the whole class.</div>
-                                <div class="comment-actions">
-                                    <div class="comment-action">
-                                        <i class="fas fa-arrow-up"></i>
-                                        <span>7</span>
-                                    </div>
-                                    <div class="comment-action">
-                                        <i class="fas fa-arrow-down"></i>
-                                    </div>
-                                    <div class="comment-action" data-en="Reply" data-kk="Жауап беру" data-ru="Ответить">Reply</div>
-                                </div>
-                            </div>
-                            <div class="add-comment">
-                                <div class="comment-form">
-                                    <textarea class="comment-input" placeholder="Add a comment..." data-en-placeholder="Add a comment..." data-kk-placeholder="Пікір қосу..." data-ru-placeholder="Добавить комментарий..."></textarea>
-                                    <button class="btn btn-primary comment-submit" data-en="Comment" data-kk="Пікір қосу" data-ru="Комментировать">Comment</button>
-                                </div>
+                                <i class="fas fa-share"></i>
+                                <span data-en="Share" data-kk="Бөлісу" data-ru="Поделиться">Share</span>
                             </div>
                         </div>
                     </div>
@@ -1570,7 +1595,7 @@
     <div id="createPostModal" class="modal create-post-modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 data-en="Create New Post" data-kk="Жаңа хабарлама жасау" data-ru="Создать новый пост">Create New Post</h2>
+                <h2 data-en="Create New Post" data-kk="Жаңа пост жасау" data-ru="Создать новый пост">Create New Post</h2>
                 <button class="close-modal">&times;</button>
             </div>
             <form class="post-form">
@@ -1582,85 +1607,79 @@
                     <label for="postCategory" data-en="Category" data-kk="Санат" data-ru="Категория">Category</label>
                     <select id="postCategory" class="form-control post-category-select" required>
                         <option value="" data-en="Select a category" data-kk="Санатты таңдаңыз" data-ru="Выберите категорию">Select a category</option>
-                        <option value="burnout" data-en="Burnout Support" data-kk="Жаншуға қарсы қолдау" data-ru="Поддержка при выгорании">Burnout Support</option>
-                        <option value="classroom" data-en="Classroom Management" data-kk="Сыныпты басқару" data-ru="Управление классом">Classroom Management</option>
-                        <option value="resources" data-en="Teaching Resources" data-kk="Оқыту ресурстары" data-ru="Ресурсы для преподавания">Teaching Resources</option>
+                        <option value="general" data-en="General Discussion" data-kk="Жалпы талқылау" data-ru="Общее обсуждение">General Discussion</option>
+                        <option value="mental-health" data-en="Mental Health" data-kk="Психикалық денсаулық" data-ru="Психическое здоровье">Mental Health</option>
+                        <option value="teaching-tips" data-en="Teaching Tips" data-kk="Оқыту кеңестері" data-ru="Советы по преподаванию">Teaching Tips</option>
+                        <option value="resources" data-en="Resources" data-kk="Ресурстар" data-ru="Ресурсы">Resources</option>
+                        <option value="qa" data-en="Q&A" data-kk="Сұрақ-жауап" data-ru="Вопросы и ответы">Q&A</option>
                         <option value="mentorship" data-en="Mentorship" data-kk="Тәлімгерлік" data-ru="Наставничество">Mentorship</option>
-                        <option value="selfcare" data-en="Self-Care" data-kk="Өзін-өзі қолдау" data-ru="Самопомощь">Self-Care</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="postContent" data-en="Content" data-kk="Мазмұны" data-ru="Содержание">Content</label>
                     <textarea id="postContent" class="form-control post-content-input" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary post-submit" data-en="Create Post" data-kk="Хабарлама жасау" data-ru="Создать пост">Create Post</button>
+                <button type="submit" class="btn btn-primary post-submit" data-en="Create Post" data-kk="Пост жасау" data-ru="Создать пост">Create Post</button>
             </form>
         </div>
     </div>
 
     <!-- Commercialization Section -->
-    <section id="commercialization">
+    <section class="commercialization" id="commercialization">
         <div class="container">
             <div class="section-header">
-                <h2 data-en="Sustainable Impact" data-kk="Тұрақты әсер" data-ru="Устойчивое воздействие">Sustainable Impact</h2>
-                <p data-en="Our business model ensures long-term sustainability while maximizing positive impact for educators." data-kk="Біздің бизнес-модель мұғалімдер үшін оң әсерді барынша арттыра отырып, ұзақ мерзімді тұрақтылықты қамтамасыз етеді." data-ru="Наша бизнес-модель обеспечивает долгосрочную устойчивость, максимизируя положительное воздействие на педагогов.">Our business model ensures long-term sustainability while maximizing positive impact for educators.</p>
+                <h2 data-en="Sustainable Growth" data-kk="Тұрақты өсу" data-ru="Устойчивое развитие">Sustainable Growth</h2>
+                <p data-en="Our approach to ensuring long-term sustainability while keeping core services free for teachers." data-kk="Негізгі қызметтерді мұғалімдер үшін тегін ұстап, ұзақ мерзімді тұрақтылықты қамтамасыз ету тәсіліміз." data-ru="Наш подход к обеспечению долгосрочной устойчивости при сохранении основных услуг бесплатными для учителей.">Our approach to ensuring long-term sustainability while keeping core services free for teachers.</p>
             </div>
             <div class="commercialization-cards">
-                <div class="card commercial-card">
+                <div class="commercial-card card">
+                    <div class="commercial-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 data-en="Premium Features" data-kk="Премиум мүмкіндіктер" data-ru="Премиум функции">Premium Features</h3>
+                    <p data-en="Advanced analytics, personalized coaching sessions, and premium resources for schools and districts." data-kk="Мектептер мен аудандар үшін жетілдірілген аналитика, жекелендірілген коучинг сеанстары және премиум ресурстар." data-ru="Расширенная аналитика, персонализированные коучинг-сессии и премиум ресурсы для школ и районов.">Advanced analytics, personalized coaching sessions, and premium resources for schools and districts.</p>
+                </div>
+                <div class="commercial-card card">
                     <div class="commercial-icon">
                         <i class="fas fa-handshake"></i>
                     </div>
-                    <h3 data-en="Corporate Partnerships" data-kk="Корпоративтік серіктестіктер" data-ru="Корпоративное партнерство">Corporate Partnerships</h3>
-                    <p data-en="Businesses sponsor teacher support programs as part of their corporate social responsibility initiatives." data-kk="Компаниялар корпоративтік әлеуметтік жауапкершілік бастамаларының бір бөлігі ретінде мұғалімдерді қолдау бағдарламаларына демеушілік жасайды." data-ru="Бизнес спонсирует программы поддержки учителей в рамках своих инициатив корпоративной социальной ответственности.">Businesses sponsor teacher support programs as part of their corporate social responsibility initiatives.</p>
+                    <h3 data-en="Partnerships" data-kk="Серіктестіктер" data-ru="Партнерства">Partnerships</h3>
+                    <p data-en="Collaborate with educational organizations, publishers, and training providers to offer value-added services." data-kk="Қосымша құндылықты қызметтерді ұсыну үшін білім беру ұйымдарымен, баспашылармен және оқыту провайдерлерімен ынтымақтасыңыз." data-ru="Сотрудничайте с образовательными организациями, издателями и провайдерами обучения для предложения услуг с добавленной стоимостью.">Collaborate with educational organizations, publishers, and training providers to offer value-added services.</p>
                 </div>
-                <div class="card commercial-card">
+                <div class="commercial-card card">
                     <div class="commercial-icon">
-                        <i class="fas fa-graduation-cap"></i>
+                        <i class="fas fa-gift"></i>
                     </div>
-                    <h3 data-en="Premium Workshops" data-kk="Премиум семинарлар" data-ru="Премиум семинары">Premium Workshops</h3>
-                    <p data-en="Specialized professional development sessions with expert facilitators for a fee." data-kk="Ақысы бар сарапшы ұйымдастырушылармен мамандандырылған кәсіби даму сессиялары." data-ru="Специализированные сессии профессионального развития с экспертами-фасилитаторами за плату.">Specialized professional development sessions with expert facilitators for a fee.</p>
-                </div>
-                <div class="card commercial-card">
-                    <div class="commercial-icon">
-                        <i class="fas fa-school"></i>
-                    </div>
-                    <h3 data-en="School Subscriptions" data-kk="Мектеп жазылымдары" data-ru="Школьные подписки">School Subscriptions</h3>
-                    <p data-en="Educational institutions purchase group access to resources and community features." data-kk="Білім беру мекемелері ресурстарға және қауымдастық мүмкіндіктеріне топтық қол жеткізуді сатып алады." data-ru="Образовательные учреждения приобретают групповой доступ к ресурсам и функциям сообщества.">Educational institutions purchase group access to resources and community features.</p>
-                </div>
-                <div class="card commercial-card">
-                    <div class="commercial-icon">
-                        <i class="fas fa-hands-helping"></i>
-                    </div>
-                    <h3 data-en="Grant Funding" data-kk="Гранттық қаржыландыру" data-ru="Грантовое финансирование">Grant Funding</h3>
-                    <p data-en="Support from foundations and government programs focused on education and mental health." data-kk="Білім және психикалық денсаулыққа бағытталған қорлар мен үкімет бағдарламаларынан қолдау." data-ru="Поддержка от фондов и государственных программ, ориентированных на образование и психическое здоровье.">Support from foundations and government programs focused on education and mental health.</p>
+                    <h3 data-en="Grants & Donations" data-kk="Гранттар және қайырымдылық" data-ru="Гранты и пожертвования">Grants & Donations</h3>
+                    <p data-en="Secure funding from educational foundations, corporate sponsors, and individual donors who believe in our mission." data-kk="Біздің миссиямызға сенетін білім беру қорларынан, корпоративтік демеушілерден және жеке донорлардан қаржыландыруды қамтамасыз етіңіз." data-ru="Обеспечьте финансирование от образовательных фондов, корпоративных спонсоров и индивидуальных доноров, которые верят в нашу миссию.">Secure funding from educational foundations, corporate sponsors, and individual donors who believe in our mission.</p>
                 </div>
             </div>
             <div class="commercial-cta">
-                <a href="#join" class="btn btn-primary" data-en="Support Our Mission" data-kk="Біздің миссиямызды қолдау" data-ru="Поддержать нашу миссию">Support Our Mission</a>
+                <p data-en="Core community features will always remain free for teachers." data-kk="Негізгі қауымдастық мүмкіндіктері әрқашан мұғалімдер үшін тегін болады." data-ru="Основные функции сообщества всегда останутся бесплатными для учителей.">Core community features will always remain free for teachers.</p>
             </div>
         </div>
     </section>
 
     <!-- Join Section -->
-    <section id="join" class="join">
+    <section class="join" id="join">
         <div class="container">
             <div class="section-header">
-                <h2 data-en="Join UstazTilek Today" data-kk="UstazTilek-ке бүгін қосылыңыз" data-ru="Присоединяйтесь к UstazTilek сегодня">Join UstazTilek Today</h2>
-                <p data-en="Become part of our growing community of educators supporting each other." data-kk="Бір-бірін қолдайтын мұғалімдердің өсіп келе жатқан қауымдастығымыздың бір бөлігі болыңыз." data-ru="Станьте частью нашего растущего сообщества педагогов, поддерживающих друг друга.">Become part of our growing community of educators supporting each other.</p>
+                <h2 data-en="Join UstazTilek Today" data-kk="Бүгін UstazTilek-ке қосылыңыз" data-ru="Присоединяйтесь к UstazTilek сегодня">Join UstazTilek Today</h2>
+                <p data-en="Become part of our growing community of educators supporting each other." data-kk="Бір-бірін қолдайтын өсіп келе жатқан мұғалімдер қауымдастығымыздың бөлігі болыңыз." data-ru="Станьте частью нашего растущего сообщества педагогов, поддерживающих друг друга.">Become part of our growing community of educators supporting each other.</p>
             </div>
             <div class="join-container">
-                <div class="form-container">
+                <div class="form-container card">
                     <div class="role-buttons">
                         <div class="role-btn active" data-role="teacher">
                             <i class="fas fa-chalkboard-teacher"></i>
                             <span data-en="Teacher" data-kk="Мұғалім" data-ru="Учитель">Teacher</span>
                         </div>
                         <div class="role-btn" data-role="mentor">
-                            <i class="fas fa-hands-helping"></i>
+                            <i class="fas fa-user-graduate"></i>
                             <span data-en="Mentor" data-kk="Тәлімгер" data-ru="Наставник">Mentor</span>
                         </div>
                         <div class="role-btn" data-role="supporter">
-                            <i class="fas fa-heart"></i>
+                            <i class="fas fa-hands-helping"></i>
                             <span data-en="Supporter" data-kk="Қолдаушы" data-ru="Поддерживающий">Supporter</span>
                         </div>
                     </div>
@@ -1682,16 +1701,10 @@
                             <input type="text" id="location" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="experience" data-en="Years of Experience" data-kk="Тәжірибе жылдары" data-ru="Годы опыта">Years of Experience</label>
-                            <select id="experience" class="form-control" required>
-                                <option value="" data-en="Select years" data-kk="Жылдарды таңдаңыз" data-ru="Выберите годы">Select years</option>
-                                <option value="0-2" data-en="0-2 years" data-kk="0-2 жыл" data-ru="0-2 года">0-2 years</option>
-                                <option value="3-5" data-en="3-5 years" data-kk="3-5 жыл" data-ru="3-5 лет">3-5 years</option>
-                                <option value="6-10" data-en="6-10 years" data-kk="6-10 жыл" data-ru="6-10 лет">6-10 years</option>
-                                <option value="10+" data-en="10+ years" data-kk="10+ жыл" data-ru="10+ лет">10+ years</option>
-                            </select>
+                            <label for="school" data-en="School/Institution" data-kk="Мектеп/Мекеме" data-ru="Школа/Учреждение">School/Institution</label>
+                            <input type="text" id="school" class="form-control">
                         </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;" data-en="Join Community" data-kk="Қауымдастыққа қосылу" data-ru="Присоединиться к сообществу">Join Community</button>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;" data-en="Create Account" data-kk="Аккаунт жасау" data-ru="Создать аккаунт">Create Account</button>
                     </form>
                 </div>
             </div>
@@ -1699,239 +1712,269 @@
     </section>
 
     <!-- Footer -->
-    <footer style="background-color: var(--dark-teal); color: white; padding: 40px 0; text-align: center;">
+    <footer>
         <div class="container">
-            <div class="logo" style="color: white; justify-content: center; margin-bottom: 20px;">
+            <div class="footer-logo logo">
                 <i class="fas fa-chalkboard-teacher"></i>
-                <span class="logo-text">UstazTilek</span>
+                <span>UstazTilek</span>
             </div>
-            <p style="margin-bottom: 30px; opacity: 0.8;" data-en="Supporting educators, strengthening education." data-kk="Мұғалімдерді қолдау, білімді нығайту." data-ru="Поддерживая педагогов, укрепляем образование.">Supporting educators, strengthening education.</p>
-            <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 30px;">
-                <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-facebook"></i></a>
-                <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-instagram"></i></a>
-                <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-telegram"></i></a>
-                <a href="#" style="color: white; font-size: 20px;"><i class="fab fa-youtube"></i></a>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
-            <p style="opacity: 0.6; font-size: 14px;">&copy; 2023 UstazTilek. All rights reserved.</p>
+            <p data-en="© 2023 UstazTilek. All rights reserved." data-kk="© 2023 UstazTilek. Барлық құқықтар қорғалған." data-ru="© 2023 UstazTilek. Все права защищены.">© 2023 UstazTilek. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Language Toggle Functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const langButtons = document.querySelectorAll('.lang-btn');
-            const elementsToTranslate = document.querySelectorAll('[data-en], [data-kk], [data-ru]');
-            
-            // Set initial language
-            let currentLang = 'en';
-            
-            langButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const lang = this.getAttribute('data-lang');
-                    
-                    // Update active button
-                    langButtons.forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    // Update language for all translatable elements
-                    elementsToTranslate.forEach(element => {
-                        if (element.hasAttribute(`data-${lang}`)) {
-                            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                                element.placeholder = element.getAttribute(`data-${lang}-placeholder`) || element.getAttribute(`data-${lang}`);
-                            } else {
-                                element.textContent = element.getAttribute(`data-${lang}`);
-                            }
-                        }
-                    });
-                    
-                    currentLang = lang;
-                });
-            });
-            
-            // Modal Functionality
-            const loginBtn = document.getElementById('loginBtn');
-            const loginModal = document.getElementById('loginModal');
-            const createPostBtn = document.getElementById('createPostBtn');
-            const createPostModal = document.getElementById('createPostModal');
-            const closeButtons = document.querySelectorAll('.close-modal');
-            const goToJoin = document.getElementById('goToJoin');
-            
-            loginBtn.addEventListener('click', function() {
-                loginModal.style.display = 'block';
-            });
-            
-            createPostBtn.addEventListener('click', function() {
-                createPostModal.style.display = 'block';
-            });
-            
-            closeButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    loginModal.style.display = 'none';
-                    createPostModal.style.display = 'none';
-                });
-            });
-            
-            goToJoin.addEventListener('click', function() {
+        // Modal functionality
+        const loginBtn = document.getElementById('loginBtn');
+        const loginModal = document.getElementById('loginModal');
+        const createPostBtn = document.getElementById('createPostBtn');
+        const createPostModal = document.getElementById('createPostModal');
+        const closeModalButtons = document.querySelectorAll('.close-modal');
+        const goToJoin = document.getElementById('goToJoin');
+
+        // Open login modal
+        loginBtn.addEventListener('click', () => {
+            loginModal.style.display = 'block';
+        });
+
+        // Open create post modal
+        createPostBtn.addEventListener('click', () => {
+            createPostModal.style.display = 'block';
+        });
+
+        // Close modals
+        closeModalButtons.forEach(button => {
+            button.addEventListener('click', () => {
                 loginModal.style.display = 'none';
-                document.getElementById('join').scrollIntoView({ behavior: 'smooth' });
-            });
-            
-            // Close modal when clicking outside
-            window.addEventListener('click', function(event) {
-                if (event.target === loginModal) {
-                    loginModal.style.display = 'none';
-                }
-                if (event.target === createPostModal) {
-                    createPostModal.style.display = 'none';
-                }
-            });
-            
-            // Role Selection
-            const roleButtons = document.querySelectorAll('.role-btn');
-            
-            roleButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    roleButtons.forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
-                });
-            });
-            
-            // Form Submission
-            const loginForm = document.getElementById('loginForm');
-            const joinForm = document.getElementById('joinForm');
-            const postForm = document.querySelector('.post-form');
-            
-            loginForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert(currentLang === 'en' ? 'Login functionality would be implemented here!' : 
-                      currentLang === 'kk' ? 'Кіру функциясы осында енгізілетін еді!' : 
-                      'Функция входа будет реализована здесь!');
-                loginModal.style.display = 'none';
-            });
-            
-            joinForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert(currentLang === 'en' ? 'Thank you for joining UstazTilek!' : 
-                      currentLang === 'kk' ? 'UstazTilek-ке қосылғаныңыз үшін рахмет!' : 
-                      'Спасибо за присоединение к UstazTilek!');
-            });
-            
-            postForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert(currentLang === 'en' ? 'Your post has been created!' : 
-                      currentLang === 'kk' ? 'Сіздің хабарламаңыз жасалды!' : 
-                      'Ваш пост создан!');
                 createPostModal.style.display = 'none';
             });
-            
-            // Chat Category Filtering
-            const categoryItems = document.querySelectorAll('.chat-categories li');
-            const postCards = document.querySelectorAll('.post-card');
-            
-            categoryItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    const category = this.getAttribute('data-category');
-                    
-                    // Update active category
-                    categoryItems.forEach(cat => cat.classList.remove('active'));
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === loginModal) {
+                loginModal.style.display = 'none';
+            }
+            if (e.target === createPostModal) {
+                createPostModal.style.display = 'none';
+            }
+        });
+
+        // Go to join section from login modal
+        goToJoin.addEventListener('click', () => {
+            loginModal.style.display = 'none';
+            document.getElementById('join').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Role selection in join form
+        const roleButtons = document.querySelectorAll('.role-btn');
+        roleButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                roleButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+            });
+        });
+
+        // Language toggle functionality
+        const langButtons = document.querySelectorAll('.lang-btn');
+        let currentLang = 'en';
+
+        langButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const lang = button.getAttribute('data-lang');
+                changeLanguage(lang);
+                
+                // Update active button
+                langButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+            });
+        });
+
+        function changeLanguage(lang) {
+            currentLang = lang;
+            document.querySelectorAll('[data-en]').forEach(element => {
+                if (element.getAttribute(`data-${lang}`)) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = element.getAttribute(`data-${lang}`);
+                    } else {
+                        element.textContent = element.getAttribute(`data-${lang}`);
+                    }
+                }
+            });
+        }
+
+        // Form submission
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert(currentLang === 'en' ? 'Login functionality would be implemented here.' : 
+                  currentLang === 'kk' ? 'Кіру функциясы осында енгізілетін еді.' : 
+                  'Функция входа была бы реализована здесь.');
+            loginModal.style.display = 'none';
+        });
+
+        document.getElementById('joinForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert(currentLang === 'en' ? 'Account creation functionality would be implemented here.' : 
+                  currentLang === 'kk' ? 'Аккаунт жасау функциясы осында енгізілетін еді.' : 
+                  'Функция создания аккаунта была бы реализована здесь.');
+        });
+
+        document.querySelector('.post-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert(currentLang === 'en' ? 'Post creation functionality would be implemented here.' : 
+                  currentLang === 'kk' ? 'Пост жасау функциясы осында енгізілетін еді.' : 
+                  'Функция создания поста была бы реализована здесь.');
+            createPostModal.style.display = 'none';
+        });
+
+        // Upvote/downvote functionality
+        document.querySelectorAll('.post-action.upvote, .post-action.downvote').forEach(action => {
+            action.addEventListener('click', function() {
+                const isUpvote = this.classList.contains('upvote');
+                const isDownvote = this.classList.contains('downvote');
+                const isActive = this.classList.contains('active');
+                
+                // Remove active state from both upvote and downvote in this post
+                const postActions = this.closest('.post-actions');
+                postActions.querySelectorAll('.post-action').forEach(a => {
+                    a.classList.remove('active');
+                });
+                
+                // Toggle active state if clicking the same button
+                if (!isActive) {
                     this.classList.add('active');
-                    
-                    // Filter posts
-                    postCards.forEach(post => {
-                        if (category === 'all' || post.getAttribute('data-category') === category) {
-                            post.style.display = 'block';
-                        } else {
-                            post.style.display = 'none';
-                        }
+                }
+                
+                // Update count
+                const countElement = this.querySelector('span');
+                let count = parseInt(countElement.textContent);
+                
+                if (isActive) {
+                    countElement.textContent = count - 1;
+                } else {
+                    countElement.textContent = count + 1;
+                }
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
                     });
-                });
+                }
             });
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', () => {
+            const nav = document.querySelector('nav');
+            nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    document.querySelector('nav').style.display = 'none';
+                }
+            });
+        });
+
+        // Add some sample posts when creating a new post
+        document.querySelector('.post-form').addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            // Voting Functionality
-            const upvoteButtons = document.querySelectorAll('.post-action.upvote, .comment-action:first-child');
-            const downvoteButtons = document.querySelectorAll('.post-action.downvote, .comment-action:nth-child(2)');
+            const title = document.getElementById('postTitle').value;
+            const category = document.getElementById('postCategory').value;
+            const content = document.getElementById('postContent').value;
             
-            upvoteButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    if (this.classList.contains('active')) {
-                        this.classList.remove('active');
-                        const countElement = this.querySelector('span');
-                        countElement.textContent = parseInt(countElement.textContent) - 1;
-                    } else {
+            // Create new post element
+            const newPost = document.createElement('div');
+            newPost.className = 'post-card';
+            newPost.innerHTML = `
+                <div class="post-header">
+                    <div class="post-meta">
+                        <div class="post-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <div class="post-author">You</div>
+                            <div class="post-time">Just now</div>
+                        </div>
+                    </div>
+                    <div class="post-category">${document.querySelector(`#postCategory option[value="${category}"]`).textContent}</div>
+                </div>
+                <h3 class="post-title">${title}</h3>
+                <div class="post-content">${content}</div>
+                <div class="post-actions">
+                    <div class="post-action upvote">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>0</span>
+                    </div>
+                    <div class="post-action downvote">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>0</span>
+                    </div>
+                    <div class="post-action">
+                        <i class="fas fa-comment"></i>
+                        <span>0</span>
+                    </div>
+                    <div class="post-action">
+                        <i class="fas fa-share"></i>
+                        <span>Share</span>
+                    </div>
+                </div>
+            `;
+            
+            // Add to the top of the chat main section
+            document.querySelector('.chat-main').prepend(newPost);
+            
+            // Reset form and close modal
+            this.reset();
+            createPostModal.style.display = 'none';
+            
+            // Add event listeners to the new post's upvote/downvote buttons
+            newPost.querySelectorAll('.post-action.upvote, .post-action.downvote').forEach(action => {
+                action.addEventListener('click', function() {
+                    const isUpvote = this.classList.contains('upvote');
+                    const isDownvote = this.classList.contains('downvote');
+                    const isActive = this.classList.contains('active');
+                    
+                    // Remove active state from both upvote and downvote in this post
+                    const postActions = this.closest('.post-actions');
+                    postActions.querySelectorAll('.post-action').forEach(a => {
+                        a.classList.remove('active');
+                    });
+                    
+                    // Toggle active state if clicking the same button
+                    if (!isActive) {
                         this.classList.add('active');
-                        const countElement = this.querySelector('span');
-                        countElement.textContent = parseInt(countElement.textContent) + 1;
-                        
-                        // Remove active from downvote if present
-                        const downvote = this.parentElement.querySelector('.downvote');
-                        if (downvote && downvote.classList.contains('active')) {
-                            downvote.classList.remove('active');
-                            const downvoteCount = downvote.querySelector('span');
-                            downvoteCount.textContent = parseInt(downvoteCount.textContent) - 1;
-                        }
                     }
-                });
-            });
-            
-            downvoteButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    if (this.classList.contains('active')) {
-                        this.classList.remove('active');
-                        const countElement = this.querySelector('span');
-                        if (countElement.textContent !== '') {
-                            countElement.textContent = parseInt(countElement.textContent) - 1;
-                        }
+                    
+                    // Update count
+                    const countElement = this.querySelector('span');
+                    let count = parseInt(countElement.textContent);
+                    
+                    if (isActive) {
+                        countElement.textContent = count - 1;
                     } else {
-                        this.classList.add('active');
-                        const countElement = this.querySelector('span');
-                        if (countElement.textContent !== '') {
-                            countElement.textContent = parseInt(countElement.textContent) + 1;
-                        }
-                        
-                        // Remove active from upvote if present
-                        const upvote = this.parentElement.querySelector('.upvote');
-                        if (upvote && upvote.classList.contains('active')) {
-                            upvote.classList.remove('active');
-                            const upvoteCount = upvote.querySelector('span');
-                            upvoteCount.textContent = parseInt(upvoteCount.textContent) - 1;
-                        }
-                    }
-                });
-            });
-            
-            // Comment Submission
-            const commentForms = document.querySelectorAll('.comment-form');
-            
-            commentForms.forEach(form => {
-                form.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const textarea = this.querySelector('.comment-input');
-                    const commentText = textarea.value.trim();
-                    
-                    if (commentText) {
-                        // In a real app, you would send this to a server
-                        // For demo, we'll just clear the textarea
-                        textarea.value = '';
-                        alert(currentLang === 'en' ? 'Comment added!' : 
-                              currentLang === 'kk' ? 'Пікір қосылды!' : 
-                              'Комментарий добавлен!');
-                    }
-                });
-            });
-            
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth'
-                        });
+                        countElement.textContent = count + 1;
                     }
                 });
             });
