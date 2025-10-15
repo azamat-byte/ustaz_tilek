@@ -40,6 +40,11 @@
             background-color: var(--white);
             line-height: 1.6;
             overflow-x: hidden;
+            /* Prevent text selection */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         h1, h2, h3, h4 {
@@ -68,6 +73,11 @@
             cursor: pointer;
             border: none;
             font-size: 16px;
+            /* Prevent text selection on buttons */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .btn-primary {
@@ -145,6 +155,11 @@
             font-weight: 700;
             font-size: 24px;
             color: var(--primary-teal);
+            /* Prevent text selection */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .logo i {
@@ -163,6 +178,11 @@
             color: var(--text-dark);
             font-weight: 500;
             transition: var(--transition);
+            /* Prevent text selection */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         nav a:hover {
@@ -192,6 +212,11 @@
             transition: var(--transition);
             padding: 6px 12px;
             border-radius: 6px;
+            /* Prevent text selection */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .lang-btn.active {
@@ -242,6 +267,11 @@
         .modal-header h2 {
             color: var(--dark-teal);
             margin: 0;
+            /* Prevent text selection */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .close-modal {
@@ -265,6 +295,11 @@
             margin-bottom: 8px;
             font-weight: 500;
             color: var(--text-dark);
+            /* Prevent text selection */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .form-control {
@@ -274,6 +309,11 @@
             border-radius: 8px;
             font-size: 16px;
             transition: var(--transition);
+            /* Allow selection in form fields */
+            -webkit-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            user-select: text;
         }
 
         .form-control:focus {
@@ -312,12 +352,22 @@
             font-size: 3rem;
             margin-bottom: 20px;
             color: var(--dark-teal);
+            /* Prevent text selection */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 40px;
             color: var(--text-light);
+            /* Prevent text selection */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .hero-buttons {
@@ -352,11 +402,21 @@
             font-size: 2.5rem;
             margin-bottom: 20px;
             color: var(--dark-teal);
+            /* Prevent text selection */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .section-header p {
             color: var(--text-light);
             font-size: 1.1rem;
+            /* Prevent text selection */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         /* Problem Section */
@@ -396,11 +456,21 @@
             font-weight: 700;
             color: var(--primary-teal);
             margin-bottom: 10px;
+            /* Prevent text selection */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .stat-text {
             color: var(--text-light);
             font-size: 1rem;
+            /* Prevent text selection */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         /* Solution Section */
@@ -435,10 +505,20 @@
             margin-bottom: 15px;
             font-size: 1.4rem;
             color: var(--dark-teal);
+            /* Prevent text selection */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .feature-card p {
             color: var(--text-light);
+            /* Prevent text selection */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         /* Global Inspiration Section */
@@ -478,11 +558,21 @@
             margin-bottom: 15px;
             font-size: 1.4rem;
             color: var(--dark-teal);
+            /* Prevent text selection */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .inspiration-card p {
             color: var(--text-light);
             margin-bottom: 20px;
+            /* Prevent text selection */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         /* Testimonials */
@@ -517,6 +607,11 @@
             color: var(--text-dark);
             position: relative;
             z-index: 1;
+            /* Prevent text selection */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .testimonial-author {
@@ -542,11 +637,21 @@
         .author-info h4 {
             margin-bottom: 5px;
             color: var(--dark-teal);
+            /* Prevent text selection */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .author-info p {
             color: var(--text-light);
             font-size: 0.9rem;
+            /* Prevent text selection */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         /* Commercialization Section */
@@ -581,11 +686,21 @@
             margin-bottom: 15px;
             font-size: 1.3rem;
             color: var(--dark-teal);
+            /* Prevent text selection */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .commercial-card p {
             color: var(--text-light);
             margin-bottom: 20px;
+            /* Prevent text selection */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .commercial-cta {
@@ -626,6 +741,11 @@
             cursor: pointer;
             transition: var(--transition);
             font-weight: 500;
+            /* Prevent text selection */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .role-btn.active {
@@ -728,7 +848,6 @@
             </nav>
             <div class="auth-buttons">
                 <button class="btn btn-outline" id="loginBtn" data-en="Login" data-kk="Кіру" data-ru="Войти">Login</button>
-                <button class="btn btn-primary" id="registerBtn" data-en="Register" data-kk="Тіркелу" data-ru="Регистрация">Register</button>
             </div>
             <div class="language-toggle">
                 <button class="lang-btn active" data-lang="en">English</button>
@@ -760,46 +879,7 @@
                 <button type="submit" class="btn btn-primary" style="width: 100%;" data-en="Login" data-kk="Кіру" data-ru="Войти">Login</button>
                 <div class="form-footer">
                     <p data-en="Don't have an account?" data-kk="Аккаунтыңыз жоқ па?" data-ru="Нет аккаунта?">
-                        Don't have an account? <a href="#" id="showRegister">Register</a>
-                    </p>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <!-- Register Modal -->
-    <div id="registerModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 data-en="Join UstazTilek" data-kk="UstazTilek-ке тіркелу" data-ru="Присоединиться к UstazTilek">Join UstazTilek</h2>
-                <button class="close-modal">&times;</button>
-            </div>
-            <form id="registerForm">
-                <div class="form-group">
-                    <label for="registerName" data-en="Full Name" data-kk="Толық аты-жөні" data-ru="Полное имя">Full Name</label>
-                    <input type="text" id="registerName" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="registerEmail" data-en="Email" data-kk="Электрондық пошта" data-ru="Email">Email</label>
-                    <input type="email" id="registerEmail" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="registerPassword" data-en="Password" data-kk="Құпия сөз" data-ru="Пароль">Password</label>
-                    <input type="password" id="registerPassword" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="registerRole" data-en="I am a" data-kk="Мен" data-ru="Я">I am a</label>
-                    <select id="registerRole" class="form-control" required>
-                        <option value="" data-en="Select role" data-kk="Рөлді таңдаңыз" data-ru="Выберите роль">Select role</option>
-                        <option value="teacher" data-en="Teacher" data-kk="Мұғалім" data-ru="Учитель">Teacher</option>
-                        <option value="mentor" data-en="Mentor" data-kk="Тәлімгер" data-ru="Наставник">Mentor</option>
-                        <option value="both" data-en="Both Teacher & Mentor" data-kk="Мұғалім және тәлімгер" data-ru="Учитель и наставник">Both Teacher & Mentor</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;" data-en="Create Account" data-kk="Аккаунт құру" data-ru="Создать аккаунт">Create Account</button>
-                <div class="form-footer">
-                    <p data-en="Already have an account?" data-kk="Аккаунтыңыз бар ма?" data-ru="Уже есть аккаунт?">
-                        Already have an account? <a href="#" id="showLogin">Login</a>
+                        Don't have an account? <a href="#join" id="goToJoin">Join here</a>
                     </p>
                 </div>
             </form>
@@ -814,7 +894,7 @@
                 <p class="hero-subtitle" data-en="A community for psychological help, mentorship, and collaboration among educators." data-kk="Мұғалімдерге арналған психологиялық көмек, тәлімгерлік және ынтымақтастық қауымдастығы." data-ru="Сообщество для психологической помощи, наставничества и сотрудничества среди педагогов.">A community for psychological help, mentorship, and collaboration among educators.</p>
                 <div class="hero-buttons">
                     <a href="#join" class="btn btn-primary" data-en="Get Support" data-kk="Қолдау алу" data-ru="Получить поддержку">Get Support</a>
-                    <button class="btn btn-secondary" id="heroRegisterBtn" data-en="Join Community" data-kk="Қауымдастыққа қосылу" data-ru="Присоединиться к сообществу">Join Community</button>
+                    <a href="#join" class="btn btn-secondary" data-en="Join Community" data-kk="Қауымдастыққа қосылу" data-ru="Присоединиться к сообществу">Join Community</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -1057,10 +1137,6 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="city" data-en="City / Region" data-kk="Қала / Аймақ" data-ru="Город / Регион">City / Region</label>
-                            <input type="text" id="city" class="form-control" placeholder="Enter your location">
-                        </div>
-                        <div class="form-group">
                             <label for="email" data-en="Email Address" data-kk="Электрондық пошта" data-ru="Адрес электронной почты">Email Address</label>
                             <input type="email" id="email" class="form-control" placeholder="Enter your email">
                         </div>
@@ -1101,13 +1177,9 @@
 
             // Modal functionality
             const loginModal = document.getElementById('loginModal');
-            const registerModal = document.getElementById('registerModal');
             const loginBtn = document.getElementById('loginBtn');
-            const registerBtn = document.getElementById('registerBtn');
-            const heroRegisterBtn = document.getElementById('heroRegisterBtn');
-            const showRegister = document.getElementById('showRegister');
-            const showLogin = document.getElementById('showLogin');
             const closeButtons = document.querySelectorAll('.close-modal');
+            const goToJoin = document.getElementById('goToJoin');
 
             function openModal(modal) {
                 modal.style.display = 'block';
@@ -1118,19 +1190,18 @@
             }
 
             loginBtn.addEventListener('click', () => openModal(loginModal));
-            registerBtn.addEventListener('click', () => openModal(registerModal));
-            heroRegisterBtn.addEventListener('click', () => openModal(registerModal));
 
-            showRegister.addEventListener('click', (e) => {
+            goToJoin.addEventListener('click', (e) => {
                 e.preventDefault();
                 closeModal(loginModal);
-                openModal(registerModal);
-            });
-
-            showLogin.addEventListener('click', (e) => {
-                e.preventDefault();
-                closeModal(registerModal);
-                openModal(loginModal);
+                // Scroll to join section
+                const joinSection = document.getElementById('join');
+                const headerHeight = 80;
+                const targetPosition = joinSection.offsetTop - headerHeight;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
             });
 
             closeButtons.forEach(btn => {
@@ -1143,7 +1214,6 @@
             // Close modal when clicking outside
             window.addEventListener('click', (e) => {
                 if (e.target === loginModal) closeModal(loginModal);
-                if (e.target === registerModal) closeModal(registerModal);
             });
 
             // Form submissions
@@ -1151,12 +1221,6 @@
                 e.preventDefault();
                 alert('Login functionality would be implemented here!');
                 closeModal(loginModal);
-            });
-
-            document.getElementById('registerForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Registration functionality would be implemented here!');
-                closeModal(registerModal);
             });
 
             // Language switching
