@@ -233,7 +233,7 @@ export default function MentorshipPage() {
             )}
 
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              <h2 className="text-xl font-bold text-neutral-900 mb-5">
                 {language === 'kk' ? 'Қолжетімді тәлімгерлер' : 'Доступные наставники'}
               </h2>
               {mentors.length === 0 ? (

@@ -36,7 +36,7 @@ function App() {
   return (
     <AuthProvider>
       <LanguageProvider>
-        <div className="flex flex-col min-h-screen bg-gray-50">
+        <div className="flex flex-col min-h-screen bg-neutral-50">
           <Header
             currentPage={currentPage}
             onNavigate={setCurrentPage}

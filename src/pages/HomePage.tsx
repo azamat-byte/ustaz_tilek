@@ -51,52 +51,54 @@ export default function HomePage({ onNavigate, onAuthClick }: HomePageProps) {
   ];
 
   return (
-    <div className="min-h-screen">
-      <section className="relative bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-            {t('hero_title')}
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
-            {t('hero_subtitle')}
-          </p>
-          <button
-            onClick={handleCTAClick}
-            className="px-8 py-4 bg-emerald-600 text-white font-semibold text-lg rounded-lg hover:bg-emerald-700 transform hover:scale-105 transition-all shadow-lg hover:shadow-xl"
-          >
-            {t('hero_cta')}
-          </button>
+    <div className="min-h-screen bg-neutral-50">
+      <section className="relative bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 py-16 px-4 border-b border-neutral-200">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-8">
+            <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-4 leading-tight">
+              {t('hero_title')}
+            </h1>
+            <p className="text-lg md:text-xl text-neutral-700 mb-6 max-w-3xl mx-auto">
+              {t('hero_subtitle')}
+            </p>
+            <button
+              onClick={handleCTAClick}
+              className="px-6 py-2.5 bg-orange-500 text-white font-semibold text-base rounded-full hover:bg-orange-600 transition-all shadow-sm hover:shadow-md"
+            >
+              {t('hero_cta')}
+            </button>
+          </div>
 
-          <div className="mt-12 space-y-4">
-            <p className="text-2xl font-medium text-emerald-700">
+          <div className="mt-10 bg-white/80 backdrop-blur-sm rounded-2xl p-6 max-w-3xl mx-auto border border-neutral-200 shadow-sm">
+            <p className="text-xl font-medium text-neutral-800 mb-2">
               {t('motivational_quote_1')}
             </p>
-            <p className="text-xl text-gray-600">
+            <p className="text-base text-neutral-600">
               {t('motivational_quote_2')}
             </p>
           </div>
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-white">
+      <section className="py-12 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-8">
             {t('language') === 'kk' ? 'Біз не ұсынамыз' : 'Что мы предлагаем'}
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-white to-emerald-50 p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-emerald-100"
+                className="bg-white p-5 rounded-xl border border-neutral-200 hover:border-neutral-300 hover:shadow-md transition-all cursor-pointer group"
               >
-                <div className="w-14 h-14 bg-emerald-600 rounded-lg flex items-center justify-center mb-4">
-                  <feature.icon className="h-7 w-7 text-white" />
+                <div className="w-12 h-12 bg-gradient-to-br from-orange-100 to-orange-200 rounded-lg flex items-center justify-center mb-4 group-hover:from-orange-200 group-hover:to-orange-300 transition-all">
+                  <feature.icon className="h-6 w-6 text-orange-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                <h3 className="text-lg font-semibold text-neutral-900 mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-sm text-neutral-600 leading-relaxed">
                   {feature.description}
                 </p>
               </div>
@@ -105,21 +107,21 @@ export default function HomePage({ onNavigate, onAuthClick }: HomePageProps) {
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-gradient-to-br from-emerald-600 to-teal-700 text-white">
+      <section className="py-16 px-4 bg-gradient-to-br from-neutral-900 to-neutral-800 text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
             {t('language') === 'kk'
               ? 'Бүгін қауымдастыққа қосылыңыз'
               : 'Присоединяйтесь к сообществу сегодня'}
           </h2>
-          <p className="text-xl mb-8 opacity-90">
+          <p className="text-lg mb-8 text-neutral-300">
             {t('language') === 'kk'
               ? 'Мыңдаған мұғалімдер сізді қолдауға дайын'
               : 'Тысячи учителей готовы поддержать вас'}
           </p>
           <button
             onClick={handleCTAClick}
-            className="px-8 py-4 bg-white text-emerald-600 font-semibold text-lg rounded-lg hover:bg-gray-100 transform hover:scale-105 transition-all shadow-lg"
+            className="px-6 py-2.5 bg-white text-neutral-900 font-semibold text-base rounded-full hover:bg-neutral-100 transition-all shadow-md"
           >
             {user ? t('hero_cta') : t('signUp')}
           </button>
